@@ -1,22 +1,28 @@
 package Webservice;
 import tools.*;
 import java.io.IOException;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.parsers.SAXParserFactory;
 
+import org.kobjects.base64.Base64;
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.AndroidHttpTransport;
 import org.ksoap2.transport.HttpTransportSE;
+import org.xml.sax.InputSource;
+import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import tools.tools;
 
+import android.R.string;
 import android.app.DownloadManager.Request;
 import android.util.Log;
+import android.util.Xml;
 public class MyWebServiceHelper {
 	 //WSDL文档中的命名空间     
 		private static final String targetNameSpace="http://webservice.nana.dsc.com/";
@@ -31,7 +37,7 @@ public class MyWebServiceHelper {
 	    /********
 	     * 获得州，国内外省份和城市信息
 	     * @return      */     
-		public  void  getLoginInformation(){
+		public  Object  getResult(){
 	    	Log.i("UserInfo","-------------连接中-----------/n");
 	        List<String> provinces=new ArrayList<String>();
 	        SoapObject soapObject=new SoapObject(targetNameSpace,fetchProcInstanceWithSerialNo);
@@ -47,20 +53,25 @@ public class MyWebServiceHelper {
 	        //或者HttpTransportSE httpTranstation=new HttpTransportSE(WSDL);         
 	        try {
 				httpTranstation.call(targetNameSpace+fetchProcInstanceWithSerialNo, envelope);
-				Object result =(Object)envelope.getResponse();
-
-			    Log.i("UserInfo","-------------------------------------");
-			    Log.i("UserInfo","------------"+result+"---------------");
-			    Log.i("UserInfo","-------------------------------------");
-			    System.out.println("执行中");
-			    SAXParserFactory spf = SAXParserFactory.newInstance(); 
-			} catch (IOException e) {
+				
+				SoapObject result =(SoapObject)envelope.bodyIn;
+				Log.i("11111111111111","-----------------");
+				//SoapObject a=(SoapObject)result.getProperty(0);
+				Log.i("11111111111111",result.getProperty(0).toString());
+				return result.getProperty(0).toString();
+				//SoapObject soap = (SoapObject)result.getProperty(0);
+			  
+				}
+				
+			   
+			 catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (XmlPullParserException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			return null;
 	        
 
 	    }
