@@ -15,6 +15,13 @@ public class Process {
 	private String serialNo;		//流程单号
 	private String subject;			//流程主题
 	private String abortComment;	//流程取消理由
+	private String activityId;		//流程处于的位置
+	public String getActivityId() {
+		return activityId;
+	}
+	public void setActivityId(String activityId) {
+		this.activityId = activityId;
+	}
 	public String getProcessId() {
 		return processId;
 	}

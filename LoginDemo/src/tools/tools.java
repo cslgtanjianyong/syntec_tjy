@@ -1,21 +1,18 @@
 package tools;
 
-import java.io.ByteArrayInputStream;
+
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.StringReader;
-import java.sql.Date;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 
 import org.jdom.Document;
+import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
 import org.xml.sax.InputSource;
 
-import android.sax.Element;
 import android.util.Log;
 
 public class tools {
@@ -25,13 +22,14 @@ public class tools {
 	//workflow的wsdl
 	public static final String WORKFLOW_WSDL="http://saturn.syntecclub.com.tw:8080/NaNaWeb/services/WorkflowService?wsdl";
 	
-	//取得在线人数的methoad 无参数需要
-	public static final String getOnlineUsers="getOnlineUsers";
-	
+	//取得用户所有正在参与的流程流水号的method 需要pProcessIds（可为空）pUserId（不能为空）
+	public static final String fetchToDoWorkItem="fetchToDoWorkItem";
 	//
-	public static final String fetchProcInstanceWithSerialNo="getOnlineUsers";
+	public static String userId="1";
 	
-	public static Process parse(String xmlDoc) {     
+	public static List<Process> processWorkingList=new ArrayList<Process>();
+	
+	public static Process xmlToProcess(String xmlDoc) {     
 	    // 创建一个新的字符串     
 		Log.i("11111111111111111111",xmlDoc);
 			Process process=new Process();
@@ -69,6 +67,45 @@ public class tools {
 		    }     
 		return process;
 		}  
+	public static List<Process> xmlToListProcess(String xmlDoc) {     
+				// 创建一个新的字符串     
+				Log.i("11111111111111111111",xmlDoc);
+				List<Process> processWorkingList=new ArrayList<Process>();
+				
+			    StringReader xmlString = new StringReader(xmlDoc);     
+			    // 创建新的输入源SAX 解析器将使用 InputSource 对象来确定如何读取 XML 输入     
+			    InputSource source = new InputSource(xmlString);     
+			    // 创建一个新的SAXBuilder     
+			    SAXBuilder saxb = new SAXBuilder();     
+			   
+			    List result = null;     
+			    try {     
+			        result = new ArrayList();     
+			        // 通过输入源构造一个Document     
+			        Document doc = saxb.build(source);     
+			        // 取的根元素     
+			        org.jdom.Element root = doc.getRootElement();  
+			       
+			        Log.i("111111111111111111",String.valueOf(root.getChildren().get(0).toString()));
+			   
+			        List<Element> classes = root.getChildren();
+			        classes.size();
+			        for(Element e:classes)
+			        {
+			        	Process p=new Process();
+			            p.setOID(e.getChild("workItemOID").getText());
+			            Log.i("11111111111111111", e.getChild("workItemOID").getText());
+			            p.setActivityId(e.getChild("processSerialNumber").getText());
+			            p.setActivityId(e.getChild("activityId").getText());
+			            processWorkingList.add(p);
+			        }    
+			   } catch (JDOMException e) {     
+			       e.printStackTrace();     
+			    } catch (IOException e) {     
+			       e.printStackTrace();     
+			    }     
+			return processWorkingList;
+			}  
  
 
 }
