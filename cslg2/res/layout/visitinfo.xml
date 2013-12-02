@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="46dip"
+        android:gravity="center_vertical"
+        android:padding="0.0px" >
+
+        <ImageView
+            android:id="@+id/rlCommenTitleBG"
+            android:layout_width="315dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/chat_title_bg_repeat" />
+
+        <TextView
+            android:id="@+id/ivTitleName"
+            style="@style/A1_Font"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:paddingLeft="96.0dip"
+            android:paddingRight="96.0dip"
+            android:singleLine="true"
+            android:text="我的拜访" />
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/title_btn_back"
+            android:text="返回"
+            android:textColor="#fff"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnSubmitvisit"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/title_btn_right"
+            android:text="提交"
+            android:textColor="#fff"
+            android:textSize="15dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/preference_first_item"
+        android:clickable="false"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="拜访者：     "
+               android:id="@+id/editvisito"
+            android:textColor="#000"
+           
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/editvisitor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="23dp"
+            android:layout_toRightOf="@+id/editvisito"
+            android:background="@color/transparent"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="textMultiLine"
+            android:maxLines="3" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout4"
+        android:background="@drawable/preference_item"
+        android:clickable="false"
+        android:gravity="center_vertical" >
+
+        <TextView  android:id="@+id/edidst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="拜访目的："
+            android:textColor="#000"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/editvisitdst"
+            style="@style/page1_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/edidst"
+            android:background="@drawable/page1_login_input"
+            android:ems="10"
+            android:inputType="textMultiLine" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout2"
+        android:background="@drawable/preference_item"
+        android:clickable="false"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="拜访时间： "
+            android:textColor="#000"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnselectdate"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/editvisittime"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/editvisittime"
+            android:background="@drawable/title_btn_right"
+            android:text="选择日期" />
+
+        <EditText
+            android:id="@+id/editvisittime"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView15"
+            android:layout_alignBottom="@+id/textView15"
+            android:layout_toRightOf="@+id/textView15"
+            android:background="@color/transparent"
+            android:ems="10"
+            android:enabled="false" >
+
+            <requestFocus />
+        </EditText>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/RelativeLayout01"
+        android:background="@drawable/preference_last_item"
+        android:clickable="false"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="拜访内容："
+            android:textColor="#000"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/editvisitcontent"
+            style="@style/page1_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          
+            android:layout_toRightOf="@+id/textView1"
+            android:background="@drawable/page1_login_input"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:minLines="1" />
+    </RelativeLayout>
+
+</RelativeLayout>

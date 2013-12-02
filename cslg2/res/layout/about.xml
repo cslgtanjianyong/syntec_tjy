@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+      android:background="@drawable/title_bg">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="46dip"
+        android:gravity="center_vertical"
+        android:padding="0.0px" >
+
+        <ImageView
+            android:id="@+id/rlCommenTitles"
+            android:layout_width="315dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/chat_title_bg_repeat" />
+
+        <TextView
+            android:id="@+id/ivTitleName"
+            style="@style/A1_Font"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:paddingLeft="96.0dip"
+            android:paddingRight="96.0dip"
+            android:singleLine="true"
+            android:text="关于" />
+
+        <Button
+            android:id="@+id/btn_closezbout"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/title_btn_back"
+            android:text="返回"
+            android:textColor="#fff"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/page1_image"
+        android:layout_below="@+id/page1_image"
+        android:layout_marginTop="19dp"
+        android:text="惠好制药有限公司"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/color_divider_for_trooplist"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/page1_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:paddingTop="2dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/textView2"
+         style="@style/A1_Font"
+            android:textColor="@color/color_divider_for_trooplist" 
+     
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Android版  13.7.21"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/textView4"
+         
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_marginBottom="13dp"
+        android:text="惠好制药有限公司  版权所有"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/textsoft"
+        style="@style/A1_Font"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:clickable="true"
+        android:text="用户协议"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/color_divider_for_trooplist" />
+
+    <ImageView
+        android:id="@+id/imageViewabout"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/textsoft"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_alignTop="@+id/textsoft"
+        android:layout_toRightOf="@+id/textsoft"
+        android:src="@drawable/icon_arrow_right" />
+
+</RelativeLayout>

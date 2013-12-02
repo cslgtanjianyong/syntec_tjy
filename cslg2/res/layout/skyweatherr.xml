@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/relativeLayoutweather"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/transparent"
+    >
+    
+<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="#FFFFFF" >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="46dip"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/chat_title_bg_repeat" >
+
+            <ImageButton
+                android:id="@+id/btnupdateweather"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="14dp"
+                android:background="@color/transparent"
+                android:scaleType="fitXY"
+                android:scrollbars="horizontal"
+                android:src="@drawable/wb_suggest_loading" />
+
+            <TextView
+                android:id="@+id/txtuptime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="更新时间："
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <ProgressBar
+                android:id="@+id/progressBarupdateweather"
+                android:layout_width="30dip"
+                android:layout_height="30dip"
+                android:layout_alignLeft="@+id/btnupdateweather"
+                android:layout_alignTop="@+id/btnupdateweather"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+  android:layout_marginBottom="8dp"
+     android:layout_alignParentBottom="true"
+        
+                  android:background="@drawable/ic_preference_" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="4dp"
+                android:text="拜\n访\n提\n示"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/button_unselected"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="27dp"
+                android:layout_toRightOf="@+id/textView1"
+                android:text="提示内容"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/button_unselected"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_preference_" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="空气质量指数："
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/txtskylevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="良"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black_overlay"
+                android:textSize="50sp" />
+
+            <TextView
+                android:id="@+id/txtwendu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/textView2"
+                android:layout_marginRight="35dp"
+                android:text="温度"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/sc_info_btn_press" />
+
+            <TextView
+                android:id="@+id/textcityq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/textView2"
+                android:layout_below="@+id/txtskylevel"
+                android:text="城市"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        </RelativeLayout>
+
+ </RelativeLayout>
+</RelativeLayout>

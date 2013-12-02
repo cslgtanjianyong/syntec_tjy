@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="46dip"
+        android:gravity="center_vertical"
+        android:padding="0.0px" >
+
+        <ImageView
+            android:id="@+id/rlCommenTitleBG"
+            android:layout_width="315dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/chat_title_bg_repeat" />
+
+        <TextView
+            android:id="@+id/ivTitleName"
+            style="@style/A1_Font"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:paddingLeft="96.0dip"
+            android:paddingRight="96.0dip"
+            android:singleLine="true"
+            android:text="任务详情/提交" />
+
+        <Button
+            android:id="@+id/btn_backtaskdetials"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/title_btn_back"
+            android:text="返回"
+            android:textColor="#fff"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnsubmitvisit"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/title_btn_right"
+            android:text="提交"
+            android:textColor="#fff"
+            android:textSize="15dp" />
+    </RelativeLayout>
+<RelativeLayout
+        android:id="@+id/relativeLayoutq3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout2"
+        android:background="@drawable/preference_item"
+        android:clickable="true"
+        android:gravity="center_vertical" >
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/preference_first_item"
+        android:clickable="false"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="拜访对象："
+            android:textSize="14sp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/txtvisitorname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textView1"
+            android:text=""
+            android:textSize="14sp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout2"
+        android:background="@drawable/preference_item"
+        android:clickable="false"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/edittaskcontent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+          android:textSize="14sp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout3"
+        android:background="@drawable/preference_last_item"
+        android:clickable="false"
+        android:gravity="center_vertical" >
+         <TextView
+            android:id="@+id/edittaskbeizhu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+          android:textSize="14sp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </RelativeLayout>
+
+</RelativeLayout>

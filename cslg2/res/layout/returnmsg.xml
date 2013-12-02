@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="46dip"
+        android:gravity="center_vertical"
+        android:padding="0.0px" >
+
+        <ImageView
+            android:id="@+id/rlCommenTitleBG"
+            android:layout_width="315dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/chat_title_bg_repeat" />
+
+        <TextView
+            android:id="@+id/ivTitleName"
+            style="@style/A1_Font"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:paddingLeft="96.0dip"
+            android:paddingRight="96.0dip"
+            android:singleLine="true"
+            android:text="反馈" />
+
+        <Button
+            android:id="@+id/btn_bac"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/title_btn_back"
+            android:text="返回"
+            android:textColor="#fff"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnsendmsg"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/title_btn_right"
+            android:text="发送"
+            android:textColor="#fff"
+            android:textSize="15dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/preference_first_item"
+        android:clickable="true"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/txtvisitorname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtvisitorname"
+            android:layout_alignBottom="@+id/txtvisitorname"
+            android:layout_alignLeft="@+id/txtvisitorname"
+            android:text="公司通知："
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout2"
+        android:background="@drawable/preference_last_item"
+        android:clickable="true"
+        android:gravity="center_vertical" >
+
+        <EditText
+            android:id="@+id/txtcompanymsg"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/transparent"
+            android:clickable="false"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="textMultiLine"
+            android:longClickable="false"
+            android:maxLines="6" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+              android:layout_below="@+id/relativeLayout5"
+        android:layout_centerVertical="true"
+        android:background="@drawable/preference_last_item"
+        android:clickable="true"
+        android:gravity="center_vertical" >
+
+        <EditText
+            android:id="@+id/page1_login_user_editmsgcontent"
+            style="@style/page1_text"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/page1_login_input"
+            android:ems="10"
+            android:hint="@string/returntextcontext"
+            android:inputType="textMultiLine"
+            android:paddingBottom="17dp"
+            android:paddingTop="16dp"
+            android:saveEnabled="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout4"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/preference_first_item"
+        android:clickable="true"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="反馈通知"
+            android:textColor="#000"
+            android:textSize="17sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

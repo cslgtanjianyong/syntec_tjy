@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+
+    android:orientation="vertical"
+    android:shrinkColumns="0,1,2" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="46dip"
+        android:gravity="center_vertical"
+        android:padding="0.0px" >
+
+        <ImageView
+            android:id="@+id/rlCommenTitleBG"
+            android:layout_width="315dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/chat_title_bg_repeat" />
+
+        <TextView
+            android:id="@+id/ivTitleName"
+            style="@style/A1_Font"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:paddingLeft="96.0dip"
+            android:paddingRight="96.0dip"
+            android:singleLine="true"
+            android:text="药品信息" />
+
+        <Button
+            android:id="@+id/btnbackmain"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/title_btn_back"
+            android:text="返回"
+            android:textColor="#fff"
+            android:textSize="14sp" />
+        <Button
+            android:id="@+id/btndrugsearch"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/title_btn_right"
+            android:text="查找"
+            android:textColor="#fff"
+            android:textSize="15dp" />
+    </RelativeLayout>
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="2dp" 
+        android:layout_marginRight="2dp"
+          android:background="@drawable/ic_preference_">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:gravity="center"
+            android:layout_marginLeft="15dp"
+            android:text="名称:\t\t"
+            style="@style/A1_Font"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/editdrugname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:background="@drawable/title_btn_right"
+            android:ems="10" 
+              android:hint="@string/returntextr">
+
+            <requestFocus />
+        </EditText>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+          android:background="@drawable/ic_preference_">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:gravity="center_horizontal"
+            android:text="类别:\t\t"
+            style="@style/A1_Font"
+              android:layout_marginLeft="15dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/spinnertype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/title_btn_right"
+            tools:listitem="@android:layout/simple_spinner_item"/>
+
+    </TableRow>
+
+    
+
+    <TableRow
+        android:id="@+id/tableRow11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dip" 
+       android:background="#CCCCCC">
+
+        <com.stay.pul.lib.PullToRefreshGridView
+            xmlns:ptr="http://schemas.android.com/apk/res/com.stay.pul"
+            android:id="@+id/pull_refresh_grid"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="2dp"
+            android:layout_span="3"
+            android:layout_weight="1.39"
+            android:columnWidth="100dp"
+            android:gravity="fill"
+            android:horizontalSpacing="0.5dp"
+            android:longClickable="true"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            android:textSize="3sp"
+             android:background="#CCCCCC"
+            android:verticalSpacing="0.5dp" />
+    </TableRow>
+ 
+<RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="4dp"
+            android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout2"
+        android:background="@drawable/ic_preference_"
+        android:clickable="false"
+        android:gravity="center_vertical" >
+
+ <ListView
+     android:id="@+id/listnews"
+     android:layout_width="fill_parent"
+     android:layout_height="match_parent"
+     android:layout_marginBottom="4dp"
+     android:layout_weight="0.41" 
+   >
+
+    </ListView>
+    </RelativeLayout>
+   
+
+ 
+    
+    
+</TableLayout>

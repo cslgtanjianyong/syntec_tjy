@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+      android:background="#FFFFFF"
+    >
+
+    <RelativeLayout
+         android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="46dip"
+        android:gravity="center_vertical"
+        android:padding="0.0px" >
+
+        <ImageView
+         
+            android:layout_width="315dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/chat_title_bg_repeat" />
+<Button
+            android:id="@+id/btnzhuxiao"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/title_btn_right"
+            android:text="注销"
+            android:textColor="#fff"
+            android:textSize="15dp" />
+        
+
+<TextView
+            android:id="@+id/btnmain"
+            style="@style/A1_Font"
+            android:layout_width="115dp"
+            android:layout_height="46dip"
+            android:layout_centerVertical="true"
+             android:layout_alignParentTop="true"
+             android:gravity="center"
+      android:text="惠好制药"
+            android:textColor="#fff"
+            android:textSize="23sp" />
+
+<TextView
+    android:id="@+id/txtcity"
+    style="@style/A1_Font"
+    android:layout_width="wrap_content"
+    android:layout_height="19sp"
+    android:layout_alignBaseline="@+id/btnmain"
+    android:layout_alignBottom="@+id/btnmain"
+    android:layout_toRightOf="@+id/btnmain"
+    android:text="北京"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:textSize="15sp" />
+
+    </RelativeLayout>
+
+
+        <TableLayout
+            android:layout_below="@+id/relativeLayout1"
+         android:id="@+id/relativeLayout11"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:gravity="center_vertical"
+        android:padding="0.0px" 
+ android:layout_alignParentLeft="true"
+    android:background="#FFFFFF"
+  android:stretchColumns="7" >
+
+
+    <TableRow
+        android:id="@+id/tableRow2"
+          android:background="@drawable/ic_preference_"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp" 
+          android:layout_marginTop="5dp"
+           android:layout_marginBottom="5dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/home_browse_history_icon" 
+           android:layout_marginTop="5dp"
+           android:layout_marginBottom="5dp"/>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="1dp"
+            android:layout_height="30dp"
+           
+            android:src="@drawable/template_frame_item_spit_line" />
+
+        <TextView
+            android:id="@+id/history3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:text="历史记录"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="italic"
+            android:typeface="monospace" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="1dp"
+            android:layout_height="30dp"
+          
+            android:src="@drawable/template_frame_item_spit_line" />
+
+        <TextView
+            android:id="@+id/history2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:text="历史记录"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="italic"
+            android:typeface="monospace" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="1dp"
+            android:layout_height="30dp"
+             
+            android:src="@drawable/template_frame_item_spit_line" />
+
+        <TextView
+            android:id="@+id/history1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:text="历史记录"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="italic"
+            android:typeface="monospace" />
+
+    </TableRow>
+
+
+
+           
+        </TableLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/relativeLayout2"
+            android:layout_below="@+id/relativeLayout11"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/hhzy_bg" >
+
+                <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:shrinkColumns="3" >
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                 >
+                     <ImageView
+                android:id="@+id/imgcompangmsg"
+                android:layout_width="96dp"
+                android:layout_height="102dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/mainmenbtn" 
+             android:layout_column="0"/>
+
+            <ImageView
+                android:id="@+id/imgproductyouhui"
+                android:layout_width="97dp"
+                android:layout_height="102dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/mainmenbtn" 
+             android:layout_column="1"/>
+
+            <ImageView
+                android:id="@+id/imgdrugselect"
+                android:layout_width="96dp"
+                android:layout_height="102dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/mainmenbtn" 
+             android:layout_column="2"/>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+              <ImageView
+                android:id="@+id/imgmytask"
+                android:layout_width="96dp"
+                android:layout_height="102dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/mainmenbtn" 
+             android:layout_column="0"/>
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="90dp"
+                android:layout_height="102dp"
+                android:layout_above="@+id/ImageView04"
+                android:layout_alignParentLeft="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/mainmenbtn" 
+                android:layout_column="1"/>
+
+            <ImageView
+                android:id="@+id/ImageView05"
+                android:layout_width="90dp"
+                android:layout_height="102dp"
+                android:layout_alignLeft="@+id/ImageView08"
+                android:layout_below="@+id/ImageView04"
+                android:scaleType="fitXY"
+                android:src="@drawable/mainmenbtn" 
+                android:layout_column="2"/>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+               <ImageView
+                android:id="@+id/imgjobdetials"
+                android:layout_width="96dp"
+                android:layout_height="103dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/mainmenbtn" 
+             android:layout_column="0"/>
+
+            <ImageView
+                android:id="@+id/imgpersoninfo"
+                android:layout_width="97dp"
+                android:layout_height="103dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/mainmenbtn" 
+             android:layout_column="1"/>
+
+            <ImageView
+                android:id="@+id/imgsystemset"
+                android:layout_width="96dp"
+                android:layout_height="103dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/mainmenbtn" 
+             android:layout_column="2"/>
+                </TableRow>
+
+                
+            </TableLayout>
+            
+           
+
+          
+
+         
+
+        </RelativeLayout>
+    
+ <RelativeLayout
+         android:id="@+id/relativeLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+         android:layout_above="@+id/relativeLayout02"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="0.0px" >
+
+        <ImageView
+          
+            android:layout_width="315dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+           />
+<Button
+            android:id="@+id/btnweather"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+          android:layout_marginRight="10dp"
+            android:background="@drawable/weather_compass"
+            android:text="编辑"
+            android:textColor="#fff"
+            android:textSize="15dp" />
+
+<TextView
+    android:id="@+id/textView1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/imageView5"
+    android:layout_alignLeft="@+id/imageView5"
+    android:layout_marginLeft="18dp"
+    android:text="天气质量"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:textSize="10sp"
+    android:textStyle="bold"
+    android:typeface="serif" />
+
+<ImageView
+    android:id="@+id/imageView5"
+    android:layout_width="45dp"
+    android:layout_height="wrap_content"
+    android:layout_alignLeft="@+id/btnweather"
+    android:layout_alignParentBottom="true"
+    android:layout_marginLeft="18dp"
+    android:src="@drawable/weather_pointer" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout02"
+        android:layout_width="fill_parent"
+        android:layout_height="46dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="0.0px" >
+
+        <ImageView
+            android:layout_width="315dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/chat_title_bg_repeat" />
+
+        
+
+        <ImageButton
+            android:id="@+id/ImageButton02"
+            android:layout_width="18dp"
+            android:layout_height="23dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:background="@drawable/home_tab_publish_q"
+            android:gravity="center"
+            android:includeFontPadding="false" />
+
+        <ImageButton
+            android:id="@+id/ImageButton01"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="22dp"
+            android:layout_toRightOf="@+id/ImageButton02"
+            android:background="@drawable/home_tab_history_q"
+            android:gravity="center"
+            android:includeFontPadding="false" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

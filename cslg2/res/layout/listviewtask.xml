@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?> 
+ <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:android1="http://schemas.android.com/apk/res/android"
+     android:layout_width="fill_parent"
+     android:layout_height="fill_parent"
+     android:background="@drawable/app_list_corner_border"
+     android:orientation="vertical" >
+     
+   <TextView 
+     android:id="@+id/newstitle" 
+android:text="title"
+
+      android:layout_width="wrap_content" 
+      android:layout_height="wrap_content"/>
+
+   <TextView
+       android:id="@+id/newscontent"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+      
+       android:layout_below="@+id/newstitle"
+       android:text="content" />
+
+   <CheckBox
+       android:id="@+id/checkBox1"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignBottom="@+id/newscontent"
+       android:layout_alignParentRight="true"
+       android:layout_marginRight="4dp"
+       android:gravity="center_vertical|start|center_horizontal"
+       android:textSize="12sp"
+       android:textStyle="bold"
+       android:typeface="sans"
+       android1:background="@drawable/wb_checkbox"
+       android1:clickable="false"
+       android1:enabled="false"
+       android1:focusable="false"
+       android1:longClickable="false"
+       android1:textColor="@color/button_unselected" />
+
+ </RelativeLayout>

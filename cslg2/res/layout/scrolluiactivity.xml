@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+ <com.example.cslg.mycontrols.MyScrollLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+        android:visibility="visible">
+        <include layout="@layout/pagemain" />
+<include layout="@layout/page1" />
+<include layout="@layout/page2" />
+<include layout="@layout/page3" />
+<include layout="@layout/page4" />
+<include layout="@layout/page5" />
+<include layout="@layout/page6" />
+<include layout="@layout/page7" />
+<include layout="@layout/page8" />
+<include layout="@layout/page9" />
+<include layout="@layout/page10" />
+<include layout="@layout/page11" />
+<include layout="@layout/page12" />
+    </com.example.cslg.mycontrols.MyScrollLayout>
+
+</LinearLayout>

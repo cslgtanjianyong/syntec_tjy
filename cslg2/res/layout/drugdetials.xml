@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/exit_layout"
+    android:layout_width="310dp"
+    android:layout_height="495dp"
+    android:layout_gravity="center_vertical|center_horizontal"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/confirm_dialog_bg2"
+    android:clickable="true"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:textAlignment="center" >
+ 
+<TextView 
+    
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="20sp" 
+android:text="药品详细信息" />
+
+<TableLayout
+     android:id="@+id/table"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+      android:layout_gravity="center_vertical|center_horizontal"
+        android:shrinkColumns="0,1" 
+      >
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+<TextView 
+
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="15sp" 
+ android:layout_column="0"
+android:text="药品编号：" />
+
+<TextView 
+      android:id="@+id/txtdrugid"
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="12sp" 
+ android:layout_column="1"
+android:text="" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+<TextView 
+    
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="15sp" 
+ android:layout_column="0"
+android:text="药品名称：" />
+<TextView 
+      android:id="@+id/txtdrugname"
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="12sp" 
+ android:layout_column="1"
+android:text="" />
+    </TableRow>
+<TableRow
+        android:id="@+id/tableRow22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+<TextView 
+    
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="15sp" 
+ android:layout_column="0"
+android:text="英文名称：" />
+<TextView 
+      android:id="@+id/txtdrugnameenglish"
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="12sp" 
+ android:layout_column="1"
+android:text="" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/tableRow122"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+<TextView 
+    
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="15sp" 
+ android:layout_column="0"
+android:text="化学名称：" />
+<TextView 
+      android:id="@+id/txtdrugnamehuaxue"
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="12sp" 
+ android:layout_column="1"
+android:text="" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/tableRow12s2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+<TextView 
+    
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="15sp" 
+ android:layout_column="0"
+android:text="产品规格：" />
+<TextView 
+      android:id="@+id/txtdrugguige"
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="12sp" 
+ android:layout_column="1"
+android:text="" />
+    </TableRow>
+     <TableRow
+        android:id="@+id/tableRow9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+<TextView 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="15sp" 
+ android:layout_column="0"
+android:text="入库时间：" />
+<TextView 
+      android:id="@+id/txtdrugcreatetime"
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="12sp" 
+ android:layout_column="1"
+android:text="" />
+    </TableRow>
+     <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+<TextView 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+ android:layout_column="0"
+android:textSize="15sp" 
+android:text="售价：" />
+<TextView 
+      android:id="@+id/txtoutprice"
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="12sp" 
+ android:layout_column="1"
+android:text="" />
+    </TableRow>
+     <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+<TextView 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="15sp" 
+ android:layout_column="0"
+android:text="成本：" />
+<TextView 
+      android:id="@+id/txtintprice"
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="12sp" 
+ android:layout_column="1"
+android:text="" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+<TextView 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="15sp" 
+ android:layout_column="0"
+android:text="有效期：" />
+<TextView 
+      android:id="@+id/txteffectivetime"
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="12sp" 
+ android:layout_column="1"
+android:text="" />
+    </TableRow>
+        <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+<TextView 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="15sp" 
+ android:layout_column="0"
+android:text="商品备注：" />
+
+<TextView
+    android:id="@+id/txtbeizhu"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_column="1"
+    android:layout_marginTop="4dp"
+    android:maxLines="1"
+    android:padding="5dp"
+    android:text=""
+    android:textColor="#333"
+    android:textSize="12sp" />
+
+    </TableRow>
+            <TableRow
+        android:id="@+id/tableRow12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+<TextView 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="15sp" 
+ android:layout_column="0"
+android:text="产品库存：" />
+<TextView 
+      android:id="@+id/txtproductnum"
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="12sp" 
+ android:layout_column="1"
+android:text="" />
+    </TableRow>
+</TableLayout>
+<TextView 
+      android:id="@+id/txtproductnum"
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="4dp" 
+android:padding="5dp" 
+android:textColor="#333" 
+android:textSize="12sp" 
+ android:layout_column="1"
+android:text="" />
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true" >
+
+            <Button
+                android:id="@+id/btnyugou"
+                style="@style/MyDialogStyle"
+                android:layout_width="87dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="42dp"
+                android:background="@drawable/title_btn_right"
+                android:gravity="center"
+                android:text="预购"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/exitB"
+             
+                android:layout_width="87dp"
+                android:layout_height="35dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="35dp"
+                android:layout_toLeftOf="@+id/btnyugou"
+                android:background="@drawable/title_btn_right"
+                android:gravity="center"
+                android:text="关闭"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+
+</RelativeLayout>
+
+
+ 
+</LinearLayout> 

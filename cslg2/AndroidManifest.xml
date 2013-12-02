@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.cslg"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="14" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        >
+        <activity
+    
+            android:name="com.example.cslg.LoginActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme" 
+            
+           android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+       
+        		<activity android:name="com.example.cslg.mainSreen" android:label="@string/app_name"    
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"  >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.LoadingActivity" android:theme="@style/MyDialogStyle"     
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+			<activity android:name="com.example.cslg.OperationHistory" android:label="@string/app_name"    
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.OPhistory" android:label="@string/app_name"    
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.Notebook" android:label="@string/app_name"    
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.Yugouhistory" android:label="@string/app_name"    
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.YouhuiInfo" android:label="@string/app_name"    
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		
+		<activity android:name="com.example.cslg.SearchCity" android:label="@string/app_name"    
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+			<activity android:name="com.example.cslg.ScrollUIActivity" android:label="@string/app_name"    
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.Softbook" android:label="@string/app_name"    
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.Softmianzeshengming" android:label="@string/app_name"    
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+			<activity android:name="com.example.cslg.Returnmsg" android:label="@string/app_name"    
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		
+			<activity android:name="com.example.cslg.About" android:label="@string/app_name"   
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.Helpandreturn" android:label="@string/app_name"   
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.CompanyMsg" android:label="@string/app_name"   
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.MyJobList" android:label="@string/app_name"   
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.Weather" android:label="@string/app_name"  android:theme="@style/Transparent" 
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden">
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.Zhedangform" android:label="@string/app_name"  android:theme="@style/MyDialogStyle" 
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden">
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.Mytask" android:label="@string/app_name"   
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.PersonalInfo" android:label="@string/app_name"   
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.Taskdetials" android:label="@string/app_name"    
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.StoryInfo" android:label="@string/app_name"    
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.Codetextqueren" android:theme="@style/MyDialogStyle"     
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden">
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+	
+		<activity android:name="com.example.cslg.Myyugouinfo" android:label="@string/app_name"   
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.Systemset" android:label="@string/app_name"    
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.VisitInfo" android:label="@string/app_name"   
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.Mainmenu" android:label="@string/app_name"   
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.Extendpage" android:label="@string/app_name"    
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden" >
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+			<activity android:name="com.stay.pul.PullToRefreshGridActivity" android:label="@string/app_name"    
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden">
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+
+		<activity android:name="MinimalDemo" android:label="@string/app_name"     >
+            
+        </activity>
+
+		 <activity
+            android:name=".PullToRefreshGridActivity"
+            android:label="@string/app_name" >
+        </activity>
+		<activity android:name="com.example.cslg.DrugInfo" android:label="@string/app_name"    
+			
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden">
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.Applicationzhuxiao" android:theme="@style/MyDialogStyle" android:label="@string/app_name"
+			
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden">
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.ExitApplication" android:theme="@style/MyDialogStyle" android:label="@string/app_name"
+			
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden">
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.storyinfo" android:theme="@style/MyDialogStyle" android:label="@string/app_name"
+			
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden">
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.mycontrols.Myspinner" android:label="@string/app_name"
+			
+			android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden">
+			<intent-filter>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.example.cslg.Exit" android:screenOrientation="portrait" android:theme="@style/MyDialogStyle">
+			
+				</activity>
+				<activity android:name="com.example.cslg.Storydetails" android:screenOrientation="portrait" android:theme="@style/MyDialogStyle">
+			
+				</activity>
+				  <!-- service注册 -->
+        <service
+            android:name="com.joboevan.push.service.PushService"
+             >
+        </service>
+
+        <!-- 配置的第三方参数属性   账号：mnbv4646  密码：4646469696 -->
+        <!-- http://www.zypush.com -->
+        <meta-data
+            android:name="ZYPUSH_APPKEY"
+            android:value="d78d137dfb11f39ddba95c0704ddc72e" />
+        
+          <!-- 开机自启广播接收器注册 -->
+        <receiver
+            android:name="com.joboevan.push.receiver.AutoStartBroadcast"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+         <!-- 消息广播接收器，也可以代码动态注册 -->
+        <receiver android:name=".PushReceiver">
+            <intent-filter>
+                <!-- action为 com.joboevan.push.message. +项目appkey  -->
+                <action android:name="com.joboevan.push.message.d78d137dfb11f39ddba95c0704ddc72e"></action>
+            </intent-filter>
+        </receiver>
+        <!-- 心跳检测 广播接收器注册 -->
+        <receiver
+            android:name="com.joboevan.push.receiver.CheckConnectRecevier"
+            android:enabled="true" />
+				
+				
+            </application>
+            
+<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission> 
+<uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission> 
+     <!-- 手机震动声明 -->
+     <uses-permission android:name="android.permission.VIBRATE"/> 
+     
+            <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> 
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+ <uses-permission android:name="android.permission.INTERNET" />
+ <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+ <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />  
+ <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+   <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- 获取手机设备号权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 手机震动权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" >
+    </uses-permission>
+    <!-- 悬浮窗体权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> 
+<uses-permission 
+  android:name="android.permission.WRITE_EXTERNAL_STORAGE">
+ </uses-permission>
+
+ <!--在sdcard中创建/删除文件的权限 -->
+ <uses-permission 
+     android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS">
+ </uses-permission>
+ <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+</manifest>

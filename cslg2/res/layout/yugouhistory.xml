@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    
+<RelativeLayout
+        android:id="@+id/relativeLayot2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+
+        android:layout_marginTop="5dp"
+        android:background="@drawable/preference_first_item"
+        android:clickable="false"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/txtvisitorname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/listViewyugoulist"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayot2"
+        android:background="@drawable/performance"
+        android:clickable="true" >
+
+    </ListView>
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@+id/listViewyugoulist"
+    android:background="@drawable/preference_last_item"
+    android:clickable="false"
+    android:gravity="center_vertical" >
+</RelativeLayout>
+
+</RelativeLayout>

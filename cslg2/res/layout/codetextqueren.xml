@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/exit_layout"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:background="@drawable/confirm_dialog_bg2" >
+
+    
+<LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"           
+            android:layout_marginTop="33dp"
+            android:layout_marginBottom="8dp"
+             >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       
+        android:padding="5dp"
+        android:text="新密码：  "
+        android:textColor="#333"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editpwd"
+        android:layout_width="126dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_btn_right"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+        </LinearLayout>
+<LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"           
+          
+            android:layout_marginBottom="8dp"
+             >
+ <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:padding="5dp"
+            android:textColor="#333"
+            android:textSize="20sp"
+            android:text="确认密码：" />
+
+ <EditText
+     android:id="@+id/editpwd2"
+     android:layout_width="120dp"
+     android:layout_height="wrap_content"
+     android:background="@drawable/title_btn_right"
+     android:ems="10"
+     android:inputType="textPassword" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"           
+            android:layout_marginTop="33dp"
+            android:layout_marginBottom="8dp"
+             >
+
+            <Button
+                android:id="@+id/btnpwdqueren"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                 android:background="@drawable/title_btn_right"
+                android:gravity="center"
+           
+                android:text="是"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btnpwdcancer "
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                 android:background="@drawable/title_btn_right"
+                android:gravity="center"
+              
+                android:text="否"
+                android:textColor="#333"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>

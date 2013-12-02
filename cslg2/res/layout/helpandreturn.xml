@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+      <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="46dip"
+        android:gravity="center_vertical"
+        android:padding="0.0px" >
+
+        <ImageView
+            android:id="@+id/rlCommenTitleBG"
+            android:layout_width="315dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/chat_title_bg_repeat" />
+
+        <TextView
+            android:id="@+id/ivTitleName"
+            style="@style/A1_Font"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:paddingLeft="96.0dip"
+            android:paddingRight="96.0dip"
+            android:singleLine="true"
+            android:text="帮助与反馈" />
+
+        <Button
+            android:id="@+id/btn_backmainhelpandreturn"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/title_btn_back"
+            android:text="返回"
+            android:textColor="#fff"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/sendmail"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/title_btn_right"
+            android:text="提交"
+            android:textColor="#fff"
+            android:textSize="15dp" />
+    </RelativeLayout>
+    
+<LinearLayout
+            	android:layout_width="fill_parent"
+            	android:layout_height="fill_parent"
+            	android:orientation="vertical" >
+            		<RelativeLayout
+            			android:layout_width="fill_parent"
+            			android:layout_height="wrap_content"
+            			android:layout_marginTop="14dp"
+            			android:gravity="center_vertical"
+            			android:clickable="true"
+            			android:background="@drawable/preference_first_item" >
+            			<TextView
+        					android:layout_width="wrap_content" 
+        					android:layout_height="wrap_content"
+        					android:padding="8dp" 
+        					android:text="我要提意见"
+        					android:textSize="17sp"		
+							android:textColor="#000" />      					
+      				</RelativeLayout>
+      				<RelativeLayout
+            			android:layout_width="fill_parent"
+            			android:layout_height="wrap_content"
+            			android:gravity="center_vertical"
+            			android:clickable="true"
+            			android:background="@drawable/preference_item" >
+            			<TextView
+        					android:layout_width="wrap_content" 
+        					android:layout_height="wrap_content"
+        					android:padding="8dp" 
+        					android:text="意见和建议：(不超过200字)"
+        					android:textSize="15sp"		
+							android:textColor="#000" /> 					
+      				</RelativeLayout>
+      				
+      				<!--   ********************************************************************   -->
+      				
+      				<!--   ***********************************************************************   -->
+      				
+      				<!--   ***********************************************************************   -->
+      				<RelativeLayout
+            			android:layout_width="fill_parent"
+            			android:layout_height="wrap_content"
+            			android:gravity="center_vertical"
+            			android:clickable="true"
+            			android:background="@drawable/preference_item" >
+
+      					<MultiAutoCompleteTextView
+      					    android:id="@+id/editsupport"
+      					    android:layout_width="wrap_content"
+      					    android:layout_height="wrap_content"
+      					    android:layout_alignParentLeft="true"
+      					    android:layout_alignParentTop="true"
+      					    android:background="@drawable/page1_login_input"
+      					    android:ems="10"
+      					    android:maxLines="3"
+      					    android:minLines="1"
+      					    android:text="" >
+
+      					    <requestFocus />
+      					</MultiAutoCompleteTextView>
+ 					
+      				</RelativeLayout>
+
+      				<RelativeLayout
+      				    android:layout_width="fill_parent"
+      				    android:layout_height="wrap_content"
+      				    android:background="@drawable/preference_item"
+      				    android:clickable="true"
+      				    android:gravity="center_vertical" >
+
+      				    <TextView
+      				        android:id="@+id/textView1"
+      				        android:layout_width="wrap_content"
+      				        android:layout_height="wrap_content"
+      				        android:padding="8dp"
+      				        android:text="联系电话："
+      				        android:textColor="#000"
+      				        android:textSize="15sp" />
+      				</RelativeLayout>
+
+      				<RelativeLayout
+            			android:layout_width="fill_parent"
+            			android:layout_height="wrap_content"
+            			android:gravity="center_vertical"
+            			android:clickable="true"
+            			android:background="@drawable/preference_item" >
+
+      					<EditText
+      					    android:id="@+id/editphonenumber"
+      					    android:layout_width="wrap_content"
+      					    android:layout_height="wrap_content"
+      					    android:layout_alignParentLeft="true"
+      					    android:layout_alignParentTop="true"
+      					    android:background="@drawable/page1_login_input"
+      					    android:ems="10"
+      					    android:inputType="phone" />
+ 					
+      				</RelativeLayout>
+      				<!--   ********************************************************************   -->
+
+      				<RelativeLayout
+      				    android:layout_width="fill_parent"
+      				    android:layout_height="wrap_content"
+      				    android:background="@drawable/preference_item"
+      				    android:clickable="true"
+      				    android:gravity="center_vertical" >
+
+      				    <TextView
+      				        android:layout_width="wrap_content"
+      				        android:layout_height="wrap_content"
+      				        android:padding="8dp"
+      				        android:text="邮箱："
+      				        android:textColor="#000"
+      				        android:textSize="15sp" />
+      				</RelativeLayout>
+<RelativeLayout
+            			android:layout_width="fill_parent"
+            			android:layout_height="wrap_content"
+            			android:gravity="center_vertical"
+            			android:clickable="true"
+            			android:background="@drawable/preference_item" >
+
+      					<EditText
+      					    android:id="@+id/editmailaddress"
+      					    android:layout_width="wrap_content"
+      					    android:layout_height="wrap_content"
+      					    android:layout_alignParentLeft="true"
+      					    android:layout_alignParentTop="true"
+      					    android:background="@drawable/page1_login_input"
+      					    android:ems="10"
+      					    android:inputType="phone" />
+ 					
+      				</RelativeLayout>
+      				
+      				<RelativeLayout
+            			android:layout_width="fill_parent"
+            			android:layout_height="wrap_content"
+            			android:gravity="center_vertical"
+            			android:clickable="true"
+            			android:background="@drawable/preference_last_item" >
+      					<TextView
+      				        android:id="@+id/textView1"
+      				        android:layout_width="wrap_content"
+      				        android:layout_height="wrap_content"
+      				        android:padding="8dp"
+      				        android:text="客服邮箱：cslgsoftteam@163.com"
+      				        android:textColor="#000"
+      				        android:textSize="15sp" />
+      				</RelativeLayout>
+        	
+        	</LinearLayout>
+</LinearLayout>
