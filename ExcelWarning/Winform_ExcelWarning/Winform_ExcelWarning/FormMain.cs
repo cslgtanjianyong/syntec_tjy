@@ -24,24 +24,15 @@ namespace Winform_ExcelWarning
             if (!File.Exists("c:/Winform_ExcelWarning.xls"))
             {
                 OleDbConnection cn = new OleDbConnection(tools.sConnectionString);
-                string sqlCreate1 = "CREATE TABLE 目标用户信息表 ([用户姓名] VarChar,[用户邮箱地址] VarChar)";
-                string sqlCreate2 = "CREATE TABLE 报表规则表 ([报表路径] VarChar,[报表栏位] VarChar,[具体规则] VarChar,[姓名] VarChar,[Email] VarChar)";
-                OleDbCommand cmd1 = new OleDbCommand(sqlCreate1, cn);//创建Excel文件：
-                OleDbCommand cmd2 = new OleDbCommand(sqlCreate2, cn);//创建Excel文件：
+                string sqlCreate = "CREATE TABLE 报表规则表 ([报表路径] VarChar,[报表栏位] VarChar,[具体规则] VarChar,[姓名] VarChar,[Email] VarChar)";
+                OleDbCommand cmd = new OleDbCommand(sqlCreate, cn);//创建Excel文件：
                 cn.Open();
-                cmd1.ExecuteNonQuery();
-                cmd2.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
                 cn.Close();
                 return;
             }
         }
 
-        private void bton_addPerson_Click(object sender, EventArgs e)
-        {
-            FormAddName formAddName = new FormAddName();
-            formAddName.Show();
-            this.Hide();
-        }
 
         private void bton_addGuize_Click(object sender, EventArgs e)
         {
@@ -49,5 +40,12 @@ namespace Winform_ExcelWarning
             formAddReportforms.Show();
             this.Hide();
         }
+
+        private void bton_searchGuize_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(DateTime.Now.ToString());
+        }
+
+       
     }
 }
