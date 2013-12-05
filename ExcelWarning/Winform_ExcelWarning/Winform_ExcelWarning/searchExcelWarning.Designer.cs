@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 295);
+            this.ClientSize = new System.Drawing.Size(547, 292);
             this.Name = "searchExcelWarning";
             this.Text = "searchExcelWarning";
             this.ResumeLayout(false);

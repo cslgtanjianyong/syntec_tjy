@@ -30,22 +30,25 @@
         {
             this.bton_sure = new System.Windows.Forms.Button();
             this.lbel_reportSource = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtb_reportlanwei = new System.Windows.Forms.TextBox();
+            this.lbel_position = new System.Windows.Forms.Label();
+            this.lbel_symbol = new System.Windows.Forms.Label();
+            this.lbel_email = new System.Windows.Forms.Label();
+            this.txtb_hang = new System.Windows.Forms.TextBox();
             this.txtb_reportSource = new System.Windows.Forms.TextBox();
             this.bton_search = new System.Windows.Forms.Button();
             this.bton_back = new System.Windows.Forms.Button();
-            this.drpd_reportguize = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.drpd_symbol = new System.Windows.Forms.ComboBox();
+            this.lbel_planType = new System.Windows.Forms.Label();
             this.drpd_reportType = new System.Windows.Forms.ComboBox();
             this.gbox_once = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lbel_oncetime = new System.Windows.Forms.Label();
             this.dtme_OnceTime = new System.Windows.Forms.DateTimePicker();
             this.dtme_OnceDateTime = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbel_oncestartDate = new System.Windows.Forms.Label();
             this.gbox_more = new System.Windows.Forms.GroupBox();
+            this.lbel_pinlv_month = new System.Windows.Forms.Label();
+            this.drpd_pinlv_month = new System.Windows.Forms.NumericUpDown();
+            this.lbel_pinlv_mei = new System.Windows.Forms.Label();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
@@ -57,9 +60,9 @@
             this.drpd_pinlv_week = new System.Windows.Forms.NumericUpDown();
             this.drpd_pinlv_day = new System.Windows.Forms.NumericUpDown();
             this.lbel_pinlv_day = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lbel_pinlvSpace = new System.Windows.Forms.Label();
             this.drpd_pinlv = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbel_actType = new System.Windows.Forms.Label();
             this.gbox_everydaymore = new System.Windows.Forms.GroupBox();
             this.dtme_MoreTime = new System.Windows.Forms.DateTimePicker();
             this.drpd_mtpinlv_time = new System.Windows.Forms.NumericUpDown();
@@ -71,20 +74,21 @@
             this.rbtn_cxTime_noendTime = new System.Windows.Forms.RadioButton();
             this.rbtn_cxTime_endTime = new System.Windows.Forms.RadioButton();
             this.dtme_cxTime_startTime = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtb_reportguize = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.txtb_morestartTime = new System.Windows.Forms.Label();
+            this.lbel_content = new System.Windows.Forms.Label();
+            this.txtb_aim = new System.Windows.Forms.TextBox();
+            this.lbel_hang = new System.Windows.Forms.Label();
+            this.txtb_lei = new System.Windows.Forms.TextBox();
+            this.lbel_lei = new System.Windows.Forms.Label();
             this.txtb_email = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lbel_article = new System.Windows.Forms.Label();
+            this.txtb_article = new System.Windows.Forms.TextBox();
+            this.lbel_attachment = new System.Windows.Forms.Label();
             this.txtb_attachmentSource = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bton_searchAttachment = new System.Windows.Forms.Button();
             this.gbox_once.SuspendLayout();
             this.gbox_more.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drpd_pinlv_month)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpd_pinlv_week)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpd_pinlv_day)).BeginInit();
             this.gbox_everydaymore.SuspendLayout();
@@ -110,39 +114,39 @@
             this.lbel_reportSource.TabIndex = 2;
             this.lbel_reportSource.Text = "选择报表：";
             // 
-            // label2
+            // lbel_position
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(379, 45);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 12);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "报表栏位：";
+            this.lbel_position.AutoSize = true;
+            this.lbel_position.Location = new System.Drawing.Point(379, 45);
+            this.lbel_position.Name = "lbel_position";
+            this.lbel_position.Size = new System.Drawing.Size(65, 12);
+            this.lbel_position.TabIndex = 3;
+            this.lbel_position.Text = "报表栏位：";
             // 
-            // label3
+            // lbel_symbol
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(67, 78);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 12);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "规则符号：";
+            this.lbel_symbol.AutoSize = true;
+            this.lbel_symbol.Location = new System.Drawing.Point(67, 78);
+            this.lbel_symbol.Name = "lbel_symbol";
+            this.lbel_symbol.Size = new System.Drawing.Size(65, 12);
+            this.lbel_symbol.TabIndex = 4;
+            this.lbel_symbol.Text = "规则符号：";
             // 
-            // label4
+            // lbel_email
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 107);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 12);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "发给人员邮箱：";
+            this.lbel_email.AutoSize = true;
+            this.lbel_email.Location = new System.Drawing.Point(43, 107);
+            this.lbel_email.Name = "lbel_email";
+            this.lbel_email.Size = new System.Drawing.Size(89, 12);
+            this.lbel_email.TabIndex = 5;
+            this.lbel_email.Text = "发给人员邮箱：";
             // 
-            // txtb_reportlanwei
+            // txtb_hang
             // 
-            this.txtb_reportlanwei.Location = new System.Drawing.Point(450, 40);
-            this.txtb_reportlanwei.Name = "txtb_reportlanwei";
-            this.txtb_reportlanwei.Size = new System.Drawing.Size(48, 21);
-            this.txtb_reportlanwei.TabIndex = 8;
+            this.txtb_hang.Location = new System.Drawing.Point(450, 40);
+            this.txtb_hang.Name = "txtb_hang";
+            this.txtb_hang.Size = new System.Drawing.Size(48, 21);
+            this.txtb_hang.TabIndex = 8;
             // 
             // txtb_reportSource
             // 
@@ -172,23 +176,23 @@
             this.bton_back.UseVisualStyleBackColor = true;
             this.bton_back.Click += new System.EventHandler(this.bton_back_Click);
             // 
-            // drpd_reportguize
+            // drpd_symbol
             // 
-            this.drpd_reportguize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.drpd_reportguize.FormattingEnabled = true;
-            this.drpd_reportguize.Location = new System.Drawing.Point(136, 75);
-            this.drpd_reportguize.Name = "drpd_reportguize";
-            this.drpd_reportguize.Size = new System.Drawing.Size(127, 20);
-            this.drpd_reportguize.TabIndex = 12;
+            this.drpd_symbol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.drpd_symbol.FormattingEnabled = true;
+            this.drpd_symbol.Location = new System.Drawing.Point(136, 75);
+            this.drpd_symbol.Name = "drpd_symbol";
+            this.drpd_symbol.Size = new System.Drawing.Size(127, 20);
+            this.drpd_symbol.TabIndex = 12;
             // 
-            // label5
+            // lbel_planType
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(65, 179);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 12);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "计划类型：";
+            this.lbel_planType.AutoSize = true;
+            this.lbel_planType.Location = new System.Drawing.Point(65, 179);
+            this.lbel_planType.Name = "lbel_planType";
+            this.lbel_planType.Size = new System.Drawing.Size(65, 12);
+            this.lbel_planType.TabIndex = 14;
+            this.lbel_planType.Text = "计划类型：";
             // 
             // drpd_reportType
             // 
@@ -202,10 +206,10 @@
             // 
             // gbox_once
             // 
-            this.gbox_once.Controls.Add(this.label7);
+            this.gbox_once.Controls.Add(this.lbel_oncetime);
             this.gbox_once.Controls.Add(this.dtme_OnceTime);
             this.gbox_once.Controls.Add(this.dtme_OnceDateTime);
-            this.gbox_once.Controls.Add(this.label6);
+            this.gbox_once.Controls.Add(this.lbel_oncestartDate);
             this.gbox_once.Location = new System.Drawing.Point(45, 202);
             this.gbox_once.Name = "gbox_once";
             this.gbox_once.Size = new System.Drawing.Size(633, 67);
@@ -213,14 +217,14 @@
             this.gbox_once.TabStop = false;
             this.gbox_once.Text = "执行一次";
             // 
-            // label7
+            // lbel_oncetime
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(277, 27);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 12);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "时间：";
+            this.lbel_oncetime.AutoSize = true;
+            this.lbel_oncetime.Location = new System.Drawing.Point(277, 27);
+            this.lbel_oncetime.Name = "lbel_oncetime";
+            this.lbel_oncetime.Size = new System.Drawing.Size(41, 12);
+            this.lbel_oncetime.TabIndex = 3;
+            this.lbel_oncetime.Text = "时间：";
             // 
             // dtme_OnceTime
             // 
@@ -239,17 +243,20 @@
             this.dtme_OnceDateTime.Size = new System.Drawing.Size(127, 21);
             this.dtme_OnceDateTime.TabIndex = 1;
             // 
-            // label6
+            // lbel_oncestartDate
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 27);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 12);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "执行日期：";
+            this.lbel_oncestartDate.AutoSize = true;
+            this.lbel_oncestartDate.Location = new System.Drawing.Point(22, 27);
+            this.lbel_oncestartDate.Name = "lbel_oncestartDate";
+            this.lbel_oncestartDate.Size = new System.Drawing.Size(65, 12);
+            this.lbel_oncestartDate.TabIndex = 0;
+            this.lbel_oncestartDate.Text = "执行日期：";
             // 
             // gbox_more
             // 
+            this.gbox_more.Controls.Add(this.lbel_pinlv_month);
+            this.gbox_more.Controls.Add(this.drpd_pinlv_month);
+            this.gbox_more.Controls.Add(this.lbel_pinlv_mei);
             this.gbox_more.Controls.Add(this.checkBox6);
             this.gbox_more.Controls.Add(this.checkBox5);
             this.gbox_more.Controls.Add(this.checkBox4);
@@ -261,15 +268,53 @@
             this.gbox_more.Controls.Add(this.drpd_pinlv_week);
             this.gbox_more.Controls.Add(this.drpd_pinlv_day);
             this.gbox_more.Controls.Add(this.lbel_pinlv_day);
-            this.gbox_more.Controls.Add(this.label9);
+            this.gbox_more.Controls.Add(this.lbel_pinlvSpace);
             this.gbox_more.Controls.Add(this.drpd_pinlv);
-            this.gbox_more.Controls.Add(this.label8);
+            this.gbox_more.Controls.Add(this.lbel_actType);
             this.gbox_more.Location = new System.Drawing.Point(45, 286);
             this.gbox_more.Name = "gbox_more";
             this.gbox_more.Size = new System.Drawing.Size(632, 80);
             this.gbox_more.TabIndex = 17;
             this.gbox_more.TabStop = false;
             this.gbox_more.Text = "频率";
+            // 
+            // lbel_pinlv_month
+            // 
+            this.lbel_pinlv_month.AutoSize = true;
+            this.lbel_pinlv_month.Location = new System.Drawing.Point(257, 43);
+            this.lbel_pinlv_month.Name = "lbel_pinlv_month";
+            this.lbel_pinlv_month.Size = new System.Drawing.Size(29, 12);
+            this.lbel_pinlv_month.TabIndex = 35;
+            this.lbel_pinlv_month.Text = "个月";
+            this.lbel_pinlv_month.Visible = false;
+            // 
+            // drpd_pinlv_month
+            // 
+            this.drpd_pinlv_month.Location = new System.Drawing.Point(195, 41);
+            this.drpd_pinlv_month.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.drpd_pinlv_month.Name = "drpd_pinlv_month";
+            this.drpd_pinlv_month.Size = new System.Drawing.Size(61, 21);
+            this.drpd_pinlv_month.TabIndex = 34;
+            this.drpd_pinlv_month.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.drpd_pinlv_month.Visible = false;
+            // 
+            // lbel_pinlv_mei
+            // 
+            this.lbel_pinlv_mei.AutoSize = true;
+            this.lbel_pinlv_mei.Location = new System.Drawing.Point(177, 43);
+            this.lbel_pinlv_mei.Name = "lbel_pinlv_mei";
+            this.lbel_pinlv_mei.Size = new System.Drawing.Size(17, 12);
+            this.lbel_pinlv_mei.TabIndex = 33;
+            this.lbel_pinlv_mei.Text = "每";
+            this.lbel_pinlv_mei.Visible = false;
             // 
             // checkBox6
             // 
@@ -356,6 +401,7 @@
             this.lbel_pinlv_week.Size = new System.Drawing.Size(17, 12);
             this.lbel_pinlv_week.TabIndex = 25;
             this.lbel_pinlv_week.Text = "周";
+            this.lbel_pinlv_week.Visible = false;
             // 
             // drpd_pinlv_week
             // 
@@ -400,14 +446,14 @@
             this.lbel_pinlv_day.TabIndex = 22;
             this.lbel_pinlv_day.Text = "天";
             // 
-            // label9
+            // lbel_pinlvSpace
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(22, 41);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 12);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "执行间隔：";
+            this.lbel_pinlvSpace.AutoSize = true;
+            this.lbel_pinlvSpace.Location = new System.Drawing.Point(22, 41);
+            this.lbel_pinlvSpace.Name = "lbel_pinlvSpace";
+            this.lbel_pinlvSpace.Size = new System.Drawing.Size(65, 12);
+            this.lbel_pinlvSpace.TabIndex = 20;
+            this.lbel_pinlvSpace.Text = "执行间隔：";
             // 
             // drpd_pinlv
             // 
@@ -419,14 +465,14 @@
             this.drpd_pinlv.TabIndex = 19;
             this.drpd_pinlv.SelectedIndexChanged += new System.EventHandler(this.drpd_pinlv_SelectedIndexChanged);
             // 
-            // label8
+            // lbel_actType
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(46, 17);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 12);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "执行：";
+            this.lbel_actType.AutoSize = true;
+            this.lbel_actType.Location = new System.Drawing.Point(46, 17);
+            this.lbel_actType.Name = "lbel_actType";
+            this.lbel_actType.Size = new System.Drawing.Size(41, 12);
+            this.lbel_actType.TabIndex = 4;
+            this.lbel_actType.Text = "执行：";
             // 
             // gbox_everydaymore
             // 
@@ -508,7 +554,7 @@
             this.gbox_moreCTime.Controls.Add(this.rbtn_cxTime_noendTime);
             this.gbox_moreCTime.Controls.Add(this.rbtn_cxTime_endTime);
             this.gbox_moreCTime.Controls.Add(this.dtme_cxTime_startTime);
-            this.gbox_moreCTime.Controls.Add(this.label11);
+            this.gbox_moreCTime.Controls.Add(this.txtb_morestartTime);
             this.gbox_moreCTime.Location = new System.Drawing.Point(43, 480);
             this.gbox_moreCTime.Name = "gbox_moreCTime";
             this.gbox_moreCTime.Size = new System.Drawing.Size(635, 82);
@@ -557,55 +603,55 @@
             this.dtme_cxTime_startTime.Size = new System.Drawing.Size(127, 21);
             this.dtme_cxTime_startTime.TabIndex = 3;
             // 
-            // label11
+            // txtb_morestartTime
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 26);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 12);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "开始日期：";
+            this.txtb_morestartTime.AutoSize = true;
+            this.txtb_morestartTime.Location = new System.Drawing.Point(6, 26);
+            this.txtb_morestartTime.Name = "txtb_morestartTime";
+            this.txtb_morestartTime.Size = new System.Drawing.Size(65, 12);
+            this.txtb_morestartTime.TabIndex = 2;
+            this.txtb_morestartTime.Text = "开始日期：";
             // 
-            // label10
+            // lbel_content
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(271, 78);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 12);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "检验内容：";
+            this.lbel_content.AutoSize = true;
+            this.lbel_content.Location = new System.Drawing.Point(271, 78);
+            this.lbel_content.Name = "lbel_content";
+            this.lbel_content.Size = new System.Drawing.Size(65, 12);
+            this.lbel_content.TabIndex = 28;
+            this.lbel_content.Text = "检验内容：";
             // 
-            // txtb_reportguize
+            // txtb_aim
             // 
-            this.txtb_reportguize.Location = new System.Drawing.Point(342, 74);
-            this.txtb_reportguize.Name = "txtb_reportguize";
-            this.txtb_reportguize.Size = new System.Drawing.Size(63, 21);
-            this.txtb_reportguize.TabIndex = 29;
+            this.txtb_aim.Location = new System.Drawing.Point(342, 74);
+            this.txtb_aim.Name = "txtb_aim";
+            this.txtb_aim.Size = new System.Drawing.Size(63, 21);
+            this.txtb_aim.TabIndex = 29;
             // 
-            // label13
+            // lbel_hang
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(504, 45);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 12);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "行(数字)";
+            this.lbel_hang.AutoSize = true;
+            this.lbel_hang.Location = new System.Drawing.Point(504, 45);
+            this.lbel_hang.Name = "lbel_hang";
+            this.lbel_hang.Size = new System.Drawing.Size(53, 12);
+            this.lbel_hang.TabIndex = 30;
+            this.lbel_hang.Text = "行(数字)";
             // 
-            // textBox2
+            // txtb_lei
             // 
-            this.textBox2.Location = new System.Drawing.Point(563, 40);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(46, 21);
-            this.textBox2.TabIndex = 31;
+            this.txtb_lei.Location = new System.Drawing.Point(563, 40);
+            this.txtb_lei.Name = "txtb_lei";
+            this.txtb_lei.Size = new System.Drawing.Size(46, 21);
+            this.txtb_lei.TabIndex = 31;
             // 
-            // label14
+            // lbel_lei
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(624, 45);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(53, 12);
-            this.label14.TabIndex = 32;
-            this.label14.Text = "列(字母)";
+            this.lbel_lei.AutoSize = true;
+            this.lbel_lei.Location = new System.Drawing.Point(624, 45);
+            this.lbel_lei.Name = "lbel_lei";
+            this.lbel_lei.Size = new System.Drawing.Size(53, 12);
+            this.lbel_lei.TabIndex = 32;
+            this.lbel_lei.Text = "列(字母)";
             // 
             // txtb_email
             // 
@@ -615,31 +661,31 @@
             this.txtb_email.Size = new System.Drawing.Size(206, 62);
             this.txtb_email.TabIndex = 17;
             // 
-            // label15
+            // lbel_article
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(397, 107);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(65, 12);
-            this.label15.TabIndex = 33;
-            this.label15.Text = "邮件正文：";
+            this.lbel_article.AutoSize = true;
+            this.lbel_article.Location = new System.Drawing.Point(397, 107);
+            this.lbel_article.Name = "lbel_article";
+            this.lbel_article.Size = new System.Drawing.Size(65, 12);
+            this.lbel_article.TabIndex = 33;
+            this.lbel_article.Text = "邮件正文：";
             // 
-            // textBox3
+            // txtb_article
             // 
-            this.textBox3.Location = new System.Drawing.Point(472, 104);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(206, 62);
-            this.textBox3.TabIndex = 34;
+            this.txtb_article.Location = new System.Drawing.Point(472, 104);
+            this.txtb_article.Multiline = true;
+            this.txtb_article.Name = "txtb_article";
+            this.txtb_article.Size = new System.Drawing.Size(206, 62);
+            this.txtb_article.TabIndex = 34;
             // 
-            // label16
+            // lbel_attachment
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(423, 77);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(89, 12);
-            this.label16.TabIndex = 35;
-            this.label16.Text = "邮件附件地址：";
+            this.lbel_attachment.AutoSize = true;
+            this.lbel_attachment.Location = new System.Drawing.Point(423, 77);
+            this.lbel_attachment.Name = "lbel_attachment";
+            this.lbel_attachment.Size = new System.Drawing.Size(89, 12);
+            this.lbel_attachment.TabIndex = 35;
+            this.lbel_attachment.Text = "邮件附件地址：";
             // 
             // txtb_attachmentSource
             // 
@@ -649,45 +695,46 @@
             this.txtb_attachmentSource.Size = new System.Drawing.Size(106, 21);
             this.txtb_attachmentSource.TabIndex = 36;
             // 
-            // button1
+            // bton_searchAttachment
             // 
-            this.button1.Location = new System.Drawing.Point(623, 72);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 23);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "浏览";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bton_searchAttachment.Location = new System.Drawing.Point(623, 72);
+            this.bton_searchAttachment.Name = "bton_searchAttachment";
+            this.bton_searchAttachment.Size = new System.Drawing.Size(55, 23);
+            this.bton_searchAttachment.TabIndex = 37;
+            this.bton_searchAttachment.Text = "浏览";
+            this.bton_searchAttachment.UseVisualStyleBackColor = true;
+            this.bton_searchAttachment.Click += new System.EventHandler(this.bton_searchAttachment_Click);
             // 
             // FormAddReportforms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 612);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bton_searchAttachment);
             this.Controls.Add(this.txtb_attachmentSource);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.txtb_reportguize);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lbel_attachment);
+            this.Controls.Add(this.txtb_article);
+            this.Controls.Add(this.lbel_article);
+            this.Controls.Add(this.lbel_lei);
+            this.Controls.Add(this.txtb_lei);
+            this.Controls.Add(this.lbel_hang);
+            this.Controls.Add(this.txtb_aim);
+            this.Controls.Add(this.lbel_content);
             this.Controls.Add(this.gbox_moreCTime);
             this.Controls.Add(this.gbox_everydaymore);
             this.Controls.Add(this.gbox_more);
             this.Controls.Add(this.txtb_email);
             this.Controls.Add(this.gbox_once);
             this.Controls.Add(this.drpd_reportType);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.drpd_reportguize);
+            this.Controls.Add(this.lbel_planType);
+            this.Controls.Add(this.drpd_symbol);
             this.Controls.Add(this.bton_back);
             this.Controls.Add(this.bton_search);
             this.Controls.Add(this.txtb_reportSource);
-            this.Controls.Add(this.txtb_reportlanwei);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtb_hang);
+            this.Controls.Add(this.lbel_email);
+            this.Controls.Add(this.lbel_symbol);
+            this.Controls.Add(this.lbel_position);
             this.Controls.Add(this.lbel_reportSource);
             this.Controls.Add(this.bton_sure);
             this.Name = "FormAddReportforms";
@@ -697,6 +744,7 @@
             this.gbox_once.PerformLayout();
             this.gbox_more.ResumeLayout(false);
             this.gbox_more.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drpd_pinlv_month)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpd_pinlv_week)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpd_pinlv_day)).EndInit();
             this.gbox_everydaymore.ResumeLayout(false);
@@ -713,25 +761,25 @@
 
         private System.Windows.Forms.Button bton_sure;
         private System.Windows.Forms.Label lbel_reportSource;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtb_reportlanwei;
+        private System.Windows.Forms.Label lbel_position;
+        private System.Windows.Forms.Label lbel_symbol;
+        private System.Windows.Forms.Label lbel_email;
+        private System.Windows.Forms.TextBox txtb_hang;
         private System.Windows.Forms.TextBox txtb_reportSource;
         private System.Windows.Forms.Button bton_search;
         private System.Windows.Forms.Button bton_back;
-        private System.Windows.Forms.ComboBox drpd_reportguize;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox drpd_symbol;
+        private System.Windows.Forms.Label lbel_planType;
         private System.Windows.Forms.ComboBox drpd_reportType;
         private System.Windows.Forms.GroupBox gbox_once;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbel_oncestartDate;
         private System.Windows.Forms.DateTimePicker dtme_OnceDateTime;
         private System.Windows.Forms.DateTimePicker dtme_OnceTime;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbel_oncetime;
         private System.Windows.Forms.GroupBox gbox_more;
         private System.Windows.Forms.ComboBox drpd_pinlv;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbel_actType;
+        private System.Windows.Forms.Label lbel_pinlvSpace;
         private System.Windows.Forms.Label lbel_pinlv_day;
         private System.Windows.Forms.NumericUpDown drpd_pinlv_day;
         private System.Windows.Forms.GroupBox gbox_everydaymore;
@@ -745,7 +793,7 @@
         private System.Windows.Forms.RadioButton rbtn_cxTime_noendTime;
         private System.Windows.Forms.RadioButton rbtn_cxTime_endTime;
         private System.Windows.Forms.DateTimePicker dtme_cxTime_startTime;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label txtb_morestartTime;
         private System.Windows.Forms.Label lbel_pinlv_week;
         private System.Windows.Forms.NumericUpDown drpd_pinlv_week;
         private System.Windows.Forms.CheckBox checkBox5;
@@ -755,17 +803,20 @@
         private System.Windows.Forms.CheckBox cbox_pinlv_Tuesday;
         private System.Windows.Forms.CheckBox cbox_pinlv_Firstday;
         private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtb_reportguize;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lbel_content;
+        private System.Windows.Forms.TextBox txtb_aim;
+        private System.Windows.Forms.Label lbel_hang;
+        private System.Windows.Forms.TextBox txtb_lei;
+        private System.Windows.Forms.Label lbel_lei;
         private System.Windows.Forms.TextBox txtb_email;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lbel_article;
+        private System.Windows.Forms.TextBox txtb_article;
+        private System.Windows.Forms.Label lbel_attachment;
         private System.Windows.Forms.TextBox txtb_attachmentSource;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bton_searchAttachment;
+        private System.Windows.Forms.Label lbel_pinlv_month;
+        private System.Windows.Forms.NumericUpDown drpd_pinlv_month;
+        private System.Windows.Forms.Label lbel_pinlv_mei;
 
     }
 }

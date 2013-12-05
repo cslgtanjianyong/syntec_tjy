@@ -47,12 +47,12 @@ namespace Winform_ExcelWarning
             objConn.Close();
             DataTable dt=objDataset1.Tables[0];
             //遍历行
-            foreach(DataRow dr in dt.Rows){  //遍历列             
-                    Person person = new Person();
-                    person.Name = dr[0].ToString();
-                    person.Email = dr[1].ToString();
-                    tools.persons.Add(person);               
-              }
+           // foreach(DataRow dr in dt.Rows){  //遍历列             
+             //       Person person = new Person();
+              //      person.Name = dr[0].ToString();
+               //     person.Email = dr[1].ToString();
+                //    tools.persons.Add(person);               
+             // }
           //  MessageBox.Show(tools.persons[0].Email);
          //   foreach (Person p in tools.persons)
          //   {
@@ -80,19 +80,19 @@ namespace Winform_ExcelWarning
 
 
             //栏位规则绑定
-            this.drpd_reportguize.Items.Add(new ListItem("大于", "大于"));
-            this.drpd_reportguize.Items.Add(new ListItem("大于等于", "大于等于"));
-            this.drpd_reportguize.Items.Add(new ListItem("小于", "小于"));
-            this.drpd_reportguize.Items.Add(new ListItem("小于等于", "小于等于"));
-            this.drpd_reportguize.Items.Add(new ListItem("等于", "等于"));
-            this.drpd_reportguize.Items.Add(new ListItem("不等于", "不等于"));
-            this.drpd_reportguize.Items.Add(new ListItem("包含", "包含"));
-            this.drpd_reportguize.Items.Add(new ListItem("不包含", "不包含"));
+            this.drpd_symbol.Items.Add(new ListItem("大于", "大于"));
+            this.drpd_symbol.Items.Add(new ListItem("大于等于", "大于等于"));
+            this.drpd_symbol.Items.Add(new ListItem("小于", "小于"));
+            this.drpd_symbol.Items.Add(new ListItem("小于等于", "小于等于"));
+            this.drpd_symbol.Items.Add(new ListItem("等于", "等于"));
+            this.drpd_symbol.Items.Add(new ListItem("不等于", "不等于"));
+            this.drpd_symbol.Items.Add(new ListItem("包含", "包含"));
+            this.drpd_symbol.Items.Add(new ListItem("不包含", "不包含"));
 
             //频率类型绑定
             this.drpd_pinlv.Items.Add(new ListItem(" 每天", "每天"));
             this.drpd_pinlv.Items.Add(new ListItem(" 每周", "每周"));
-            //this.drpd_pinlv.Items.Add(new ListItem(" 每月", "每月"));
+            this.drpd_pinlv.Items.Add(new ListItem(" 每月", "每月"));
 
             //
             this.drpd_timeType.Items.Add(new ListItem("小时", "小时"));
@@ -176,6 +176,9 @@ namespace Winform_ExcelWarning
             {
                 this.lbel_pinlv_day.Visible = true;
                 this.lbel_pinlv_week.Visible = false;
+                this.lbel_pinlv_mei.Visible = false;
+                this.drpd_pinlv_month.Visible = false;
+                this.lbel_pinlv_month.Visible = false;
                 foreach (Control c in gbox_more.Controls) 
                 {
                     if (c.GetType().ToString() == "System.Windows.Forms.CheckBox")
@@ -188,6 +191,9 @@ namespace Winform_ExcelWarning
             {
                 this.lbel_pinlv_day.Visible = false;
                 this.lbel_pinlv_week.Visible = true;
+                this.lbel_pinlv_mei.Visible = false;
+                this.drpd_pinlv_month.Visible = false;
+                this.lbel_pinlv_month.Visible = false;
                 foreach (Control c in gbox_more.Controls)
                 {
                     if (c.GetType().ToString() == "System.Windows.Forms.CheckBox") 
@@ -196,7 +202,35 @@ namespace Winform_ExcelWarning
                     }
                 }
             }
+            if (this.drpd_pinlv.SelectedItem.ToString() == "每月")
+            {
+                this.lbel_pinlv_day.Visible = true;
+                this.lbel_pinlv_week.Visible = false;
+                this.lbel_pinlv_mei.Visible = true;
+                this.drpd_pinlv_month.Visible = true;
+                this.lbel_pinlv_month.Visible = true;
+
+                foreach (Control c in gbox_more.Controls)
+                {
+                    if (c.GetType().ToString() == "System.Windows.Forms.CheckBox")
+                    {
+                        c.Visible = false;
+                    }
+                }
+            }
         }
+
+        private void bton_searchAttachment_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.ShowDialog();
+            this.txtb_attachmentSource.Text = ofd.FileName;
+        }
+
+
+      
+
+    
 
       
 

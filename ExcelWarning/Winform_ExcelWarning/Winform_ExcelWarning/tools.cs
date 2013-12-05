@@ -8,8 +8,8 @@ namespace Winform_ExcelWarning
 {
     class tools
     {
-        public static String sConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;" + "Data Source=c:/Winform_ExcelWarning.xls;" + "Extended Properties=Excel 8.0;";
-        public static List<Person> persons = new List<Person>();
+        public static String connectionString = "Data Source=.;Initial Catalog=ExcelWarning;Integrated Security=True";
+   
 
         public static bool HasEmail(string source)
         {

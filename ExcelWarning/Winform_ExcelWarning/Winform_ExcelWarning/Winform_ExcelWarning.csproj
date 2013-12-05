@@ -78,7 +78,13 @@
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="ListItem.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="log.cs" />
+    <Compile Include="logCon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="logCon.Designer.cs">
+      <DependentUpon>logCon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAddReportforms.resx">
@@ -87,13 +93,22 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="logCon.resx">
+      <DependentUpon>logCon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ruleCon.resx">
+      <DependentUpon>ruleCon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="searchExcelWarning.resx">
       <DependentUpon>searchExcelWarning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="searchLog.resx">
+      <DependentUpon>searchLog.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -109,12 +124,24 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Report.cs" />
+    <Compile Include="rule.cs" />
+    <Compile Include="ruleCon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ruleCon.Designer.cs">
+      <DependentUpon>ruleCon.cs</DependentUpon>
+    </Compile>
     <Compile Include="searchExcelWarning.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="searchExcelWarning.Designer.cs">
       <DependentUpon>searchExcelWarning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="searchLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchLog.Designer.cs">
+      <DependentUpon>searchLog.cs</DependentUpon>
     </Compile>
     <Compile Include="SetTime.cs">
       <SubType>Form</SubType>
@@ -148,6 +175,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Syntec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\true.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\false.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

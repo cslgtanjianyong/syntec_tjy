@@ -60,9 +60,30 @@ namespace Winform_ExcelWarning.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap _false {
+            get {
+                object obj = ResourceManager.GetObject("false", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap _true {
+            get {
+                object obj = ResourceManager.GetObject("true", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Syntec {
             get {
                 object obj = ResourceManager.GetObject("Syntec", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap warning {
+            get {
+                object obj = ResourceManager.GetObject("warning", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
