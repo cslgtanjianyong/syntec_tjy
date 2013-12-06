@@ -62,18 +62,13 @@ namespace Winform_ExcelWarning
 
         private void bton_start_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("请输入要提取的字符串：");
-            string str = "10分钟";
-            int number = 0; string num = null; 
-            foreach (char item in str) 
-            {
-                if (item >= 48 && item <= 58) 
-                {
-                    num += item;
-                } 
-            }
-            number = int.Parse(num);
-            Console.WriteLine(number); 
+           
+          
+        }
+
+        private void bton_end_Click(object sender, EventArgs e)
+        {
+            
         } 
     }
 }

@@ -49,16 +49,16 @@
             this.lbel_pinlv_month = new System.Windows.Forms.Label();
             this.drpd_pinlv_month = new System.Windows.Forms.NumericUpDown();
             this.lbel_pinlv_mei = new System.Windows.Forms.Label();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.cbox_pinlv_ = new System.Windows.Forms.CheckBox();
+            this.cbox_pinlv_Sunday = new System.Windows.Forms.CheckBox();
+            this.cbox_pinlv_Saturday = new System.Windows.Forms.CheckBox();
+            this.cbox_pinlv_Friday = new System.Windows.Forms.CheckBox();
+            this.cbox_pinlv_Thursday = new System.Windows.Forms.CheckBox();
+            this.cbox_pinlv_Wednesday = new System.Windows.Forms.CheckBox();
             this.cbox_pinlv_Tuesday = new System.Windows.Forms.CheckBox();
             this.cbox_pinlv_Firstday = new System.Windows.Forms.CheckBox();
             this.lbel_pinlv_week = new System.Windows.Forms.Label();
-            this.drpd_pinlv_week = new System.Windows.Forms.NumericUpDown();
             this.drpd_pinlv_day = new System.Windows.Forms.NumericUpDown();
+            this.drpd_pinlv_week = new System.Windows.Forms.NumericUpDown();
             this.lbel_pinlv_day = new System.Windows.Forms.Label();
             this.lbel_pinlvSpace = new System.Windows.Forms.Label();
             this.drpd_pinlv = new System.Windows.Forms.ComboBox();
@@ -86,11 +86,21 @@
             this.lbel_attachment = new System.Windows.Forms.Label();
             this.txtb_attachmentSource = new System.Windows.Forms.TextBox();
             this.bton_searchAttachment = new System.Windows.Forms.Button();
+            this.lbel_tableName = new System.Windows.Forms.Label();
+            this.drpd_tableName = new System.Windows.Forms.ComboBox();
+            this.lbel_fileBName = new System.Windows.Forms.Label();
+            this.bton_filesearch = new System.Windows.Forms.Button();
+            this.txtb_fileBName = new System.Windows.Forms.TextBox();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.bton_fileClear = new System.Windows.Forms.Button();
+            this.bton_fileBName = new System.Windows.Forms.Button();
+            this.dtme_lastStartTime = new System.Windows.Forms.DateTimePicker();
+            this.dtme_lastEndTime = new System.Windows.Forms.DateTimePicker();
             this.gbox_once.SuspendLayout();
             this.gbox_more.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drpd_pinlv_month)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpd_pinlv_week)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpd_pinlv_day)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpd_pinlv_week)).BeginInit();
             this.gbox_everydaymore.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drpd_mtpinlv_time)).BeginInit();
             this.gbox_moreCTime.SuspendLayout();
@@ -104,6 +114,7 @@
             this.bton_sure.TabIndex = 0;
             this.bton_sure.Text = " 确定设置";
             this.bton_sure.UseVisualStyleBackColor = true;
+            this.bton_sure.Click += new System.EventHandler(this.bton_sure_Click);
             // 
             // lbel_reportSource
             // 
@@ -117,11 +128,12 @@
             // lbel_position
             // 
             this.lbel_position.AutoSize = true;
-            this.lbel_position.Location = new System.Drawing.Point(379, 45);
+            this.lbel_position.Location = new System.Drawing.Point(484, 45);
             this.lbel_position.Name = "lbel_position";
             this.lbel_position.Size = new System.Drawing.Size(65, 12);
             this.lbel_position.TabIndex = 3;
             this.lbel_position.Text = "报表栏位：";
+            this.lbel_position.Click += new System.EventHandler(this.lbel_position_Click);
             // 
             // lbel_symbol
             // 
@@ -143,9 +155,9 @@
             // 
             // txtb_hang
             // 
-            this.txtb_hang.Location = new System.Drawing.Point(450, 40);
+            this.txtb_hang.Location = new System.Drawing.Point(550, 40);
             this.txtb_hang.Name = "txtb_hang";
-            this.txtb_hang.Size = new System.Drawing.Size(48, 21);
+            this.txtb_hang.Size = new System.Drawing.Size(33, 21);
             this.txtb_hang.TabIndex = 8;
             // 
             // txtb_reportSource
@@ -153,12 +165,12 @@
             this.txtb_reportSource.Location = new System.Drawing.Point(136, 42);
             this.txtb_reportSource.Name = "txtb_reportSource";
             this.txtb_reportSource.ReadOnly = true;
-            this.txtb_reportSource.Size = new System.Drawing.Size(127, 21);
+            this.txtb_reportSource.Size = new System.Drawing.Size(63, 21);
             this.txtb_reportSource.TabIndex = 9;
             // 
             // bton_search
             // 
-            this.bton_search.Location = new System.Drawing.Point(279, 40);
+            this.bton_search.Location = new System.Drawing.Point(208, 40);
             this.bton_search.Name = "bton_search";
             this.bton_search.Size = new System.Drawing.Size(55, 23);
             this.bton_search.TabIndex = 10;
@@ -168,7 +180,7 @@
             // 
             // bton_back
             // 
-            this.bton_back.Location = new System.Drawing.Point(2, 1);
+            this.bton_back.Location = new System.Drawing.Point(672, 1);
             this.bton_back.Name = "bton_back";
             this.bton_back.Size = new System.Drawing.Size(75, 23);
             this.bton_back.TabIndex = 11;
@@ -184,6 +196,7 @@
             this.drpd_symbol.Name = "drpd_symbol";
             this.drpd_symbol.Size = new System.Drawing.Size(127, 20);
             this.drpd_symbol.TabIndex = 12;
+            this.drpd_symbol.SelectedIndexChanged += new System.EventHandler(this.drpd_symbol_SelectedIndexChanged);
             // 
             // lbel_planType
             // 
@@ -257,16 +270,16 @@
             this.gbox_more.Controls.Add(this.lbel_pinlv_month);
             this.gbox_more.Controls.Add(this.drpd_pinlv_month);
             this.gbox_more.Controls.Add(this.lbel_pinlv_mei);
-            this.gbox_more.Controls.Add(this.checkBox6);
-            this.gbox_more.Controls.Add(this.checkBox5);
-            this.gbox_more.Controls.Add(this.checkBox4);
-            this.gbox_more.Controls.Add(this.checkBox3);
-            this.gbox_more.Controls.Add(this.cbox_pinlv_);
+            this.gbox_more.Controls.Add(this.cbox_pinlv_Sunday);
+            this.gbox_more.Controls.Add(this.cbox_pinlv_Saturday);
+            this.gbox_more.Controls.Add(this.cbox_pinlv_Friday);
+            this.gbox_more.Controls.Add(this.cbox_pinlv_Thursday);
+            this.gbox_more.Controls.Add(this.cbox_pinlv_Wednesday);
             this.gbox_more.Controls.Add(this.cbox_pinlv_Tuesday);
             this.gbox_more.Controls.Add(this.cbox_pinlv_Firstday);
             this.gbox_more.Controls.Add(this.lbel_pinlv_week);
-            this.gbox_more.Controls.Add(this.drpd_pinlv_week);
             this.gbox_more.Controls.Add(this.drpd_pinlv_day);
+            this.gbox_more.Controls.Add(this.drpd_pinlv_week);
             this.gbox_more.Controls.Add(this.lbel_pinlv_day);
             this.gbox_more.Controls.Add(this.lbel_pinlvSpace);
             this.gbox_more.Controls.Add(this.drpd_pinlv);
@@ -316,60 +329,60 @@
             this.lbel_pinlv_mei.Text = "每";
             this.lbel_pinlv_mei.Visible = false;
             // 
-            // checkBox6
+            // cbox_pinlv_Sunday
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(420, 46);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(60, 16);
-            this.checkBox6.TabIndex = 32;
-            this.checkBox6.Text = "星期天";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            this.checkBox6.Visible = false;
+            this.cbox_pinlv_Sunday.AutoSize = true;
+            this.cbox_pinlv_Sunday.Location = new System.Drawing.Point(420, 46);
+            this.cbox_pinlv_Sunday.Name = "cbox_pinlv_Sunday";
+            this.cbox_pinlv_Sunday.Size = new System.Drawing.Size(60, 16);
+            this.cbox_pinlv_Sunday.TabIndex = 32;
+            this.cbox_pinlv_Sunday.Text = "星期天";
+            this.cbox_pinlv_Sunday.UseVisualStyleBackColor = true;
+            this.cbox_pinlv_Sunday.Visible = false;
             // 
-            // checkBox5
+            // cbox_pinlv_Saturday
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(354, 46);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(60, 16);
-            this.checkBox5.TabIndex = 31;
-            this.checkBox5.Text = "星期六";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            this.checkBox5.Visible = false;
+            this.cbox_pinlv_Saturday.AutoSize = true;
+            this.cbox_pinlv_Saturday.Location = new System.Drawing.Point(354, 46);
+            this.cbox_pinlv_Saturday.Name = "cbox_pinlv_Saturday";
+            this.cbox_pinlv_Saturday.Size = new System.Drawing.Size(60, 16);
+            this.cbox_pinlv_Saturday.TabIndex = 31;
+            this.cbox_pinlv_Saturday.Text = "星期六";
+            this.cbox_pinlv_Saturday.UseVisualStyleBackColor = true;
+            this.cbox_pinlv_Saturday.Visible = false;
             // 
-            // checkBox4
+            // cbox_pinlv_Friday
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(288, 46);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(60, 16);
-            this.checkBox4.TabIndex = 30;
-            this.checkBox4.Text = "星期五";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.Visible = false;
+            this.cbox_pinlv_Friday.AutoSize = true;
+            this.cbox_pinlv_Friday.Location = new System.Drawing.Point(288, 46);
+            this.cbox_pinlv_Friday.Name = "cbox_pinlv_Friday";
+            this.cbox_pinlv_Friday.Size = new System.Drawing.Size(60, 16);
+            this.cbox_pinlv_Friday.TabIndex = 30;
+            this.cbox_pinlv_Friday.Text = "星期五";
+            this.cbox_pinlv_Friday.UseVisualStyleBackColor = true;
+            this.cbox_pinlv_Friday.Visible = false;
             // 
-            // checkBox3
+            // cbox_pinlv_Thursday
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(483, 20);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(60, 16);
-            this.checkBox3.TabIndex = 29;
-            this.checkBox3.Text = "星期四";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.Visible = false;
+            this.cbox_pinlv_Thursday.AutoSize = true;
+            this.cbox_pinlv_Thursday.Location = new System.Drawing.Point(483, 20);
+            this.cbox_pinlv_Thursday.Name = "cbox_pinlv_Thursday";
+            this.cbox_pinlv_Thursday.Size = new System.Drawing.Size(60, 16);
+            this.cbox_pinlv_Thursday.TabIndex = 29;
+            this.cbox_pinlv_Thursday.Text = "星期四";
+            this.cbox_pinlv_Thursday.UseVisualStyleBackColor = true;
+            this.cbox_pinlv_Thursday.Visible = false;
             // 
-            // cbox_pinlv_
+            // cbox_pinlv_Wednesday
             // 
-            this.cbox_pinlv_.AutoSize = true;
-            this.cbox_pinlv_.Location = new System.Drawing.Point(420, 20);
-            this.cbox_pinlv_.Name = "cbox_pinlv_";
-            this.cbox_pinlv_.Size = new System.Drawing.Size(60, 16);
-            this.cbox_pinlv_.TabIndex = 28;
-            this.cbox_pinlv_.Text = "星期三";
-            this.cbox_pinlv_.UseVisualStyleBackColor = true;
-            this.cbox_pinlv_.Visible = false;
+            this.cbox_pinlv_Wednesday.AutoSize = true;
+            this.cbox_pinlv_Wednesday.Location = new System.Drawing.Point(420, 20);
+            this.cbox_pinlv_Wednesday.Name = "cbox_pinlv_Wednesday";
+            this.cbox_pinlv_Wednesday.Size = new System.Drawing.Size(60, 16);
+            this.cbox_pinlv_Wednesday.TabIndex = 28;
+            this.cbox_pinlv_Wednesday.Text = "星期三";
+            this.cbox_pinlv_Wednesday.UseVisualStyleBackColor = true;
+            this.cbox_pinlv_Wednesday.Visible = false;
             // 
             // cbox_pinlv_Tuesday
             // 
@@ -403,26 +416,9 @@
             this.lbel_pinlv_week.Text = "周";
             this.lbel_pinlv_week.Visible = false;
             // 
-            // drpd_pinlv_week
-            // 
-            this.drpd_pinlv_week.Location = new System.Drawing.Point(93, 41);
-            this.drpd_pinlv_week.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.drpd_pinlv_week.Name = "drpd_pinlv_week";
-            this.drpd_pinlv_week.Size = new System.Drawing.Size(61, 21);
-            this.drpd_pinlv_week.TabIndex = 24;
-            this.drpd_pinlv_week.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // drpd_pinlv_day
             // 
-            this.drpd_pinlv_day.Location = new System.Drawing.Point(93, 40);
+            this.drpd_pinlv_day.Location = new System.Drawing.Point(93, 41);
             this.drpd_pinlv_day.Minimum = new decimal(new int[] {
             1,
             0,
@@ -430,8 +426,25 @@
             0});
             this.drpd_pinlv_day.Name = "drpd_pinlv_day";
             this.drpd_pinlv_day.Size = new System.Drawing.Size(61, 21);
-            this.drpd_pinlv_day.TabIndex = 23;
+            this.drpd_pinlv_day.TabIndex = 24;
             this.drpd_pinlv_day.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // drpd_pinlv_week
+            // 
+            this.drpd_pinlv_week.Location = new System.Drawing.Point(91, 41);
+            this.drpd_pinlv_week.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.drpd_pinlv_week.Name = "drpd_pinlv_week";
+            this.drpd_pinlv_week.Size = new System.Drawing.Size(61, 21);
+            this.drpd_pinlv_week.TabIndex = 23;
+            this.drpd_pinlv_week.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -499,6 +512,7 @@
             // 
             // drpd_mtpinlv_time
             // 
+            this.drpd_mtpinlv_time.Enabled = false;
             this.drpd_mtpinlv_time.Location = new System.Drawing.Point(93, 52);
             this.drpd_mtpinlv_time.Minimum = new decimal(new int[] {
             1,
@@ -517,6 +531,7 @@
             // drpd_timeType
             // 
             this.drpd_timeType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.drpd_timeType.Enabled = false;
             this.drpd_timeType.FormattingEnabled = true;
             this.drpd_timeType.Location = new System.Drawing.Point(244, 53);
             this.drpd_timeType.Name = "drpd_timeType";
@@ -531,7 +546,6 @@
             this.rbtn_mtpinlv_more.Name = "rbtn_mtpinlv_more";
             this.rbtn_mtpinlv_more.Size = new System.Drawing.Size(83, 16);
             this.rbtn_mtpinlv_more.TabIndex = 1;
-            this.rbtn_mtpinlv_more.TabStop = true;
             this.rbtn_mtpinlv_more.Text = "执行间隔：";
             this.rbtn_mtpinlv_more.UseVisualStyleBackColor = true;
             this.rbtn_mtpinlv_more.CheckedChanged += new System.EventHandler(this.rbtn_mtpinlv_more_CheckedChanged);
@@ -539,6 +553,7 @@
             // rbtn_mtpinlv_once
             // 
             this.rbtn_mtpinlv_once.AutoSize = true;
+            this.rbtn_mtpinlv_once.Checked = true;
             this.rbtn_mtpinlv_once.Location = new System.Drawing.Point(6, 20);
             this.rbtn_mtpinlv_once.Name = "rbtn_mtpinlv_once";
             this.rbtn_mtpinlv_once.Size = new System.Drawing.Size(131, 16);
@@ -550,6 +565,8 @@
             // 
             // gbox_moreCTime
             // 
+            this.gbox_moreCTime.Controls.Add(this.dtme_lastEndTime);
+            this.gbox_moreCTime.Controls.Add(this.dtme_lastStartTime);
             this.gbox_moreCTime.Controls.Add(this.dtme_cxTime_endTime);
             this.gbox_moreCTime.Controls.Add(this.rbtn_cxTime_noendTime);
             this.gbox_moreCTime.Controls.Add(this.rbtn_cxTime_endTime);
@@ -564,11 +581,10 @@
             // 
             // dtme_cxTime_endTime
             // 
-            this.dtme_cxTime_endTime.Enabled = false;
             this.dtme_cxTime_endTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtme_cxTime_endTime.Location = new System.Drawing.Point(368, 22);
             this.dtme_cxTime_endTime.Name = "dtme_cxTime_endTime";
-            this.dtme_cxTime_endTime.Size = new System.Drawing.Size(127, 21);
+            this.dtme_cxTime_endTime.Size = new System.Drawing.Size(101, 21);
             this.dtme_cxTime_endTime.TabIndex = 7;
             // 
             // rbtn_cxTime_noendTime
@@ -578,7 +594,6 @@
             this.rbtn_cxTime_noendTime.Name = "rbtn_cxTime_noendTime";
             this.rbtn_cxTime_noendTime.Size = new System.Drawing.Size(95, 16);
             this.rbtn_cxTime_noendTime.TabIndex = 6;
-            this.rbtn_cxTime_noendTime.TabStop = true;
             this.rbtn_cxTime_noendTime.Text = "无结束日期：";
             this.rbtn_cxTime_noendTime.UseVisualStyleBackColor = true;
             this.rbtn_cxTime_noendTime.CheckedChanged += new System.EventHandler(this.rbtn_cxTime_noendTime_CheckedChanged);
@@ -586,6 +601,7 @@
             // rbtn_cxTime_endTime
             // 
             this.rbtn_cxTime_endTime.AutoSize = true;
+            this.rbtn_cxTime_endTime.Checked = true;
             this.rbtn_cxTime_endTime.Location = new System.Drawing.Point(279, 26);
             this.rbtn_cxTime_endTime.Name = "rbtn_cxTime_endTime";
             this.rbtn_cxTime_endTime.Size = new System.Drawing.Size(83, 16);
@@ -598,9 +614,9 @@
             // dtme_cxTime_startTime
             // 
             this.dtme_cxTime_startTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtme_cxTime_startTime.Location = new System.Drawing.Point(77, 20);
+            this.dtme_cxTime_startTime.Location = new System.Drawing.Point(69, 20);
             this.dtme_cxTime_startTime.Name = "dtme_cxTime_startTime";
-            this.dtme_cxTime_startTime.Size = new System.Drawing.Size(127, 21);
+            this.dtme_cxTime_startTime.Size = new System.Drawing.Size(98, 21);
             this.dtme_cxTime_startTime.TabIndex = 3;
             // 
             // txtb_morestartTime
@@ -631,7 +647,7 @@
             // lbel_hang
             // 
             this.lbel_hang.AutoSize = true;
-            this.lbel_hang.Location = new System.Drawing.Point(504, 45);
+            this.lbel_hang.Location = new System.Drawing.Point(590, 46);
             this.lbel_hang.Name = "lbel_hang";
             this.lbel_hang.Size = new System.Drawing.Size(53, 12);
             this.lbel_hang.TabIndex = 30;
@@ -639,15 +655,15 @@
             // 
             // txtb_lei
             // 
-            this.txtb_lei.Location = new System.Drawing.Point(563, 40);
+            this.txtb_lei.Location = new System.Drawing.Point(646, 40);
             this.txtb_lei.Name = "txtb_lei";
-            this.txtb_lei.Size = new System.Drawing.Size(46, 21);
+            this.txtb_lei.Size = new System.Drawing.Size(33, 21);
             this.txtb_lei.TabIndex = 31;
             // 
             // lbel_lei
             // 
             this.lbel_lei.AutoSize = true;
-            this.lbel_lei.Location = new System.Drawing.Point(624, 45);
+            this.lbel_lei.Location = new System.Drawing.Point(694, 45);
             this.lbel_lei.Name = "lbel_lei";
             this.lbel_lei.Size = new System.Drawing.Size(53, 12);
             this.lbel_lei.TabIndex = 32;
@@ -660,6 +676,7 @@
             this.txtb_email.Name = "txtb_email";
             this.txtb_email.Size = new System.Drawing.Size(206, 62);
             this.txtb_email.TabIndex = 17;
+          
             // 
             // lbel_article
             // 
@@ -705,11 +722,101 @@
             this.bton_searchAttachment.UseVisualStyleBackColor = true;
             this.bton_searchAttachment.Click += new System.EventHandler(this.bton_searchAttachment_Click);
             // 
+            // lbel_tableName
+            // 
+            this.lbel_tableName.AutoSize = true;
+            this.lbel_tableName.Location = new System.Drawing.Point(331, 45);
+            this.lbel_tableName.Name = "lbel_tableName";
+            this.lbel_tableName.Size = new System.Drawing.Size(41, 12);
+            this.lbel_tableName.TabIndex = 38;
+            this.lbel_tableName.Text = "表名：";
+            // 
+            // drpd_tableName
+            // 
+            this.drpd_tableName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.drpd_tableName.FormattingEnabled = true;
+            this.drpd_tableName.Location = new System.Drawing.Point(366, 42);
+            this.drpd_tableName.Name = "drpd_tableName";
+            this.drpd_tableName.Size = new System.Drawing.Size(110, 20);
+            this.drpd_tableName.TabIndex = 39;
+            // 
+            // lbel_fileBName
+            // 
+            this.lbel_fileBName.AutoSize = true;
+            this.lbel_fileBName.Location = new System.Drawing.Point(53, 12);
+            this.lbel_fileBName.Name = "lbel_fileBName";
+            this.lbel_fileBName.Size = new System.Drawing.Size(77, 12);
+            this.lbel_fileBName.TabIndex = 40;
+            this.lbel_fileBName.Text = "选择文件夹：";
+            // 
+            // bton_filesearch
+            // 
+            this.bton_filesearch.Location = new System.Drawing.Point(273, 9);
+            this.bton_filesearch.Name = "bton_filesearch";
+            this.bton_filesearch.Size = new System.Drawing.Size(55, 23);
+            this.bton_filesearch.TabIndex = 41;
+            this.bton_filesearch.Text = "浏览";
+            this.bton_filesearch.UseVisualStyleBackColor = true;
+            this.bton_filesearch.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtb_fileBName
+            // 
+            this.txtb_fileBName.Location = new System.Drawing.Point(136, 9);
+            this.txtb_fileBName.Name = "txtb_fileBName";
+            this.txtb_fileBName.ReadOnly = true;
+            this.txtb_fileBName.Size = new System.Drawing.Size(127, 21);
+            this.txtb_fileBName.TabIndex = 42;
+            // 
+            // bton_fileClear
+            // 
+            this.bton_fileClear.Location = new System.Drawing.Point(276, 41);
+            this.bton_fileClear.Name = "bton_fileClear";
+            this.bton_fileClear.Size = new System.Drawing.Size(52, 23);
+            this.bton_fileClear.TabIndex = 43;
+            this.bton_fileClear.Text = "清空";
+            this.bton_fileClear.UseVisualStyleBackColor = true;
+            this.bton_fileClear.Click += new System.EventHandler(this.bton_fileClear_Click);
+            // 
+            // bton_fileBName
+            // 
+            this.bton_fileBName.Location = new System.Drawing.Point(341, 9);
+            this.bton_fileBName.Name = "bton_fileBName";
+            this.bton_fileBName.Size = new System.Drawing.Size(52, 23);
+            this.bton_fileBName.TabIndex = 44;
+            this.bton_fileBName.Text = "清空";
+            this.bton_fileBName.UseVisualStyleBackColor = true;
+            this.bton_fileBName.Click += new System.EventHandler(this.bton_fileBName_Click);
+            // 
+            // dtme_lastStartTime
+            // 
+            this.dtme_lastStartTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtme_lastStartTime.Location = new System.Drawing.Point(175, 20);
+            this.dtme_lastStartTime.Name = "dtme_lastStartTime";
+            this.dtme_lastStartTime.ShowUpDown = true;
+            this.dtme_lastStartTime.Size = new System.Drawing.Size(98, 21);
+            this.dtme_lastStartTime.TabIndex = 4;
+            // 
+            // dtme_lastEndTime
+            // 
+            this.dtme_lastEndTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtme_lastEndTime.Location = new System.Drawing.Point(476, 22);
+            this.dtme_lastEndTime.Name = "dtme_lastEndTime";
+            this.dtme_lastEndTime.ShowUpDown = true;
+            this.dtme_lastEndTime.Size = new System.Drawing.Size(98, 21);
+            this.dtme_lastEndTime.TabIndex = 8;
+            // 
             // FormAddReportforms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 612);
+            this.Controls.Add(this.bton_fileBName);
+            this.Controls.Add(this.bton_fileClear);
+            this.Controls.Add(this.txtb_fileBName);
+            this.Controls.Add(this.bton_filesearch);
+            this.Controls.Add(this.lbel_fileBName);
+            this.Controls.Add(this.drpd_tableName);
+            this.Controls.Add(this.lbel_tableName);
             this.Controls.Add(this.bton_searchAttachment);
             this.Controls.Add(this.txtb_attachmentSource);
             this.Controls.Add(this.lbel_attachment);
@@ -745,8 +852,8 @@
             this.gbox_more.ResumeLayout(false);
             this.gbox_more.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drpd_pinlv_month)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drpd_pinlv_week)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drpd_pinlv_day)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drpd_pinlv_week)).EndInit();
             this.gbox_everydaymore.ResumeLayout(false);
             this.gbox_everydaymore.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drpd_mtpinlv_time)).EndInit();
@@ -781,7 +888,7 @@
         private System.Windows.Forms.Label lbel_actType;
         private System.Windows.Forms.Label lbel_pinlvSpace;
         private System.Windows.Forms.Label lbel_pinlv_day;
-        private System.Windows.Forms.NumericUpDown drpd_pinlv_day;
+        private System.Windows.Forms.NumericUpDown drpd_pinlv_week;
         private System.Windows.Forms.GroupBox gbox_everydaymore;
         private System.Windows.Forms.RadioButton rbtn_mtpinlv_once;
         private System.Windows.Forms.ComboBox drpd_timeType;
@@ -795,14 +902,14 @@
         private System.Windows.Forms.DateTimePicker dtme_cxTime_startTime;
         private System.Windows.Forms.Label txtb_morestartTime;
         private System.Windows.Forms.Label lbel_pinlv_week;
-        private System.Windows.Forms.NumericUpDown drpd_pinlv_week;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox cbox_pinlv_;
+        private System.Windows.Forms.NumericUpDown drpd_pinlv_day;
+        private System.Windows.Forms.CheckBox cbox_pinlv_Saturday;
+        private System.Windows.Forms.CheckBox cbox_pinlv_Friday;
+        private System.Windows.Forms.CheckBox cbox_pinlv_Thursday;
+        private System.Windows.Forms.CheckBox cbox_pinlv_Wednesday;
         private System.Windows.Forms.CheckBox cbox_pinlv_Tuesday;
         private System.Windows.Forms.CheckBox cbox_pinlv_Firstday;
-        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox cbox_pinlv_Sunday;
         private System.Windows.Forms.Label lbel_content;
         private System.Windows.Forms.TextBox txtb_aim;
         private System.Windows.Forms.Label lbel_hang;
@@ -817,6 +924,16 @@
         private System.Windows.Forms.Label lbel_pinlv_month;
         private System.Windows.Forms.NumericUpDown drpd_pinlv_month;
         private System.Windows.Forms.Label lbel_pinlv_mei;
+        private System.Windows.Forms.Label lbel_tableName;
+        private System.Windows.Forms.ComboBox drpd_tableName;
+        private System.Windows.Forms.Label lbel_fileBName;
+        private System.Windows.Forms.Button bton_filesearch;
+        private System.Windows.Forms.TextBox txtb_fileBName;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.Button bton_fileClear;
+        private System.Windows.Forms.Button bton_fileBName;
+        private System.Windows.Forms.DateTimePicker dtme_lastEndTime;
+        private System.Windows.Forms.DateTimePicker dtme_lastStartTime;
 
     }
 }

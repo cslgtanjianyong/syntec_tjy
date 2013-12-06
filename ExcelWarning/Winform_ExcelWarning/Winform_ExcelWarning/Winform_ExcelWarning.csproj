@@ -104,9 +104,6 @@
     <EmbeddedResource Include="ruleCon.resx">
       <DependentUpon>ruleCon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="searchExcelWarning.resx">
-      <DependentUpon>searchExcelWarning.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="searchLog.resx">
       <DependentUpon>searchLog.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,18 +121,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="rule.cs" />
     <Compile Include="ruleCon.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ruleCon.Designer.cs">
       <DependentUpon>ruleCon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="searchExcelWarning.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="searchExcelWarning.Designer.cs">
-      <DependentUpon>searchExcelWarning.cs</DependentUpon>
     </Compile>
     <Compile Include="searchLog.cs">
       <SubType>Form</SubType>
@@ -184,6 +174,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\warning.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{38D7AA58-C95B-449B-86C6-A8073A56E11F}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{9FE00521-3A8B-42B1-814E-585E99407B2E}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBUtility\DBUtility.csproj">
+      <Project>{0988C62E-247F-471F-A183-DB509C7A3839}</Project>
+      <Name>DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{53995DBB-9836-4647-AD22-865884FDEB9E}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -139,6 +139,7 @@
             this.bton_end.TabIndex = 13;
             this.bton_end.Text = "关闭检测";
             this.bton_end.UseVisualStyleBackColor = true;
+            this.bton_end.Click += new System.EventHandler(this.bton_end_Click);
             // 
             // lbel_update
             // 
