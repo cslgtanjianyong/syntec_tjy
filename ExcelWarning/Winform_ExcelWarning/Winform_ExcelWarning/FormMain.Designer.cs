@@ -155,7 +155,7 @@
             this.panl_rule.AutoScroll = true;
             this.panl_rule.Location = new System.Drawing.Point(39, 136);
             this.panl_rule.Name = "panl_rule";
-            this.panl_rule.Size = new System.Drawing.Size(900, 158);
+            this.panl_rule.Size = new System.Drawing.Size(916, 158);
             this.panl_rule.TabIndex = 15;
             // 
             // label2
@@ -243,7 +243,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(944, 374);
+            this.ClientSize = new System.Drawing.Size(967, 374);
             this.Controls.Add(this.lbel_searchLog);
             this.Controls.Add(this.lbel_nextTime);
             this.Controls.Add(this.label4);

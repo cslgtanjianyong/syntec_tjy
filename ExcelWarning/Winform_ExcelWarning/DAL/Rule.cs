@@ -53,7 +53,7 @@ namespace syntec.DAL
 			SqlParameter[] parameters = {
 					new SqlParameter("@reportSource", SqlDbType.NVarChar,100),
 					new SqlParameter("@sheetName", SqlDbType.NVarChar,50),
-					new SqlParameter("@position", SqlDbType.VarChar,3),
+					new SqlParameter("@position", SqlDbType.VarChar,10),
 					new SqlParameter("@symbol", SqlDbType.NVarChar,3),
 					new SqlParameter("@aim", SqlDbType.NVarChar,50),
 					new SqlParameter("@planType", SqlDbType.NChar,10),

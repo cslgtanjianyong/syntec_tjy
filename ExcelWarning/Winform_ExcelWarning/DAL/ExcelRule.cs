@@ -53,8 +53,8 @@ namespace syntec.DAL
 			SqlParameter[] parameters = {
 					new SqlParameter("@reportSource", SqlDbType.NVarChar,100),
 					new SqlParameter("@sheetName", SqlDbType.NVarChar,50),
-					new SqlParameter("@position", SqlDbType.VarChar,3),
-					new SqlParameter("@symbol", SqlDbType.NVarChar,3),
+					new SqlParameter("@position", SqlDbType.VarChar,10),
+					new SqlParameter("@symbol", SqlDbType.NVarChar,10),
 					new SqlParameter("@aim", SqlDbType.NVarChar,50),
 					new SqlParameter("@planType", SqlDbType.NChar,10),
 					new SqlParameter("@timeType", SqlDbType.NVarChar,2),
@@ -98,7 +98,15 @@ namespace syntec.DAL
 			parameters[13].Value = model.email;
 			parameters[14].Value = model.article;
 			parameters[15].Value = model.attachmentSource;
-			parameters[16].Value = model.nextDoTimeDate;
+            if (model.nextDoTimeDate.ToString() == "0001/1/1 0:00:00")
+            {
+                parameters[16].Value = null;
+            }
+            else 
+            {
+                parameters[16].Value = model.nextDoTimeDate;
+            }
+			
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
@@ -138,7 +146,7 @@ namespace syntec.DAL
 			SqlParameter[] parameters = {
 					new SqlParameter("@reportSource", SqlDbType.NVarChar,100),
 					new SqlParameter("@sheetName", SqlDbType.NVarChar,50),
-					new SqlParameter("@position", SqlDbType.VarChar,3),
+					new SqlParameter("@position", SqlDbType.VarChar,10),
 					new SqlParameter("@symbol", SqlDbType.NVarChar,3),
 					new SqlParameter("@aim", SqlDbType.NVarChar,50),
 					new SqlParameter("@planType", SqlDbType.NChar,10),
@@ -147,8 +155,8 @@ namespace syntec.DAL
 					new SqlParameter("@everydayFreSpace", SqlDbType.NVarChar,5),
 					new SqlParameter("@startTime", SqlDbType.Time,3),
 					new SqlParameter("@endTime", SqlDbType.Time,3),
-					new SqlParameter("@startDate", SqlDbType.Date,3),
-					new SqlParameter("@endDate", SqlDbType.Date,3),
+					new SqlParameter("@startDate", SqlDbType.DateTime,3),
+					new SqlParameter("@endDate", SqlDbType.DateTime,3),
 					new SqlParameter("@email", SqlDbType.NVarChar,1000),
 					new SqlParameter("@article", SqlDbType.NVarChar,200),
 					new SqlParameter("@attachmentSource", SqlDbType.NVarChar,100),
@@ -162,6 +170,10 @@ namespace syntec.DAL
 			parameters[5].Value = model.planType;
 			parameters[6].Value = model.timeType;
 			parameters[7].Value = model.timeSpace;
+            if (model.everydayFreSpace == "") 
+            {
+                model.everydayFreSpace = null;
+            }
 			parameters[8].Value = model.everydayFreSpace;
             parameters[9].Value = model.startTime;
             if (model.endTime.ToString() == "00:00:00")
@@ -184,7 +196,14 @@ namespace syntec.DAL
 			parameters[13].Value = model.email;
 			parameters[14].Value = model.article;
 			parameters[15].Value = model.attachmentSource;
-			parameters[16].Value = model.nextDoTimeDate;
+            if (model.nextDoTimeDate.ToString() == "0001/1/1 0:00:00")
+            {
+                parameters[16].Value = null;
+            }
+            else 
+            {
+                parameters[16].Value = model.nextDoTimeDate;
+            }
 			parameters[17].Value = model.ID;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);

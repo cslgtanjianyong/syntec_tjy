@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.IO;
+using System.Threading;
 
 
 
@@ -15,36 +16,61 @@ namespace Winform_ExcelWarning
 {
     public partial class FormMain : Form
     {
+        public Thread thread;
         public FormMain()
         {
             InitializeComponent();
         }
+        public void addFriend(string a)
+        {
 
+        }
         private void FormMain_Load(object sender, EventArgs e)
         {
-            //if (!File.Exists("c:/Winform_ExcelWarning.xls"))
-            //{
-            //    OleDbConnection cn = new OleDbConnection(tools.sConnectionString);
-            //    string sqlCreate = "CREATE TABLE 报表规则表 ([报表路径] VarChar,[报表栏位] VarChar,[具体规则] VarChar,[姓名] VarChar,[Email] VarChar)";
-            //    OleDbCommand cmd = new OleDbCommand(sqlCreate, cn);//创建Excel文件：
-            //    cn.Open();
-            //    cmd.ExecuteNonQuery();
-            //    cn.Close();
-            //    return;
-            //}
-            ruleCon rulecon = new ruleCon();
-            rulecon.Left = 0;
-            rulecon.Top = 0;
-            rulecon.txtb_fileName.Text = "6月加班请假报表-总公司";
-            rulecon.txtb_position.Text = "B4";
-            rulecon.txtb_rule.Text = "大于10";
-            rulecon.txtb_describe.Text = "只执行一次";
-            rulecon.txtb_startTime.Text = "2013/12/5 9:20:00";
-            rulecon.txtb_endTime.Text = "2013/12/5 9:20:00";
-            rulecon.txtb_nextTime.Text = "2013/12/5 9:20:00";
-            panl_rule.Controls.Add(rulecon);
-            
-            
+            syntec.BLL.ExcelRule rulebll = new syntec.BLL.ExcelRule();
+            List<syntec.Model.ExcelRule> rulelist = new List<syntec.Model.ExcelRule>();
+            rulelist = rulebll.GetModelList("1=1");
+            int i = 0;
+            DateTime nulltime = new DateTime();
+            foreach (syntec.Model.ExcelRule rule in rulelist)
+            {
+                ruleCon rulecon = new ruleCon();
+                rulecon._rule = rule;
+                rulecon.Left = 0;
+                rulecon.Top = rulecon.Height * i;
+                i++;
+                rulecon.txtb_fileName.Text = rule.sheetName;
+                rulecon.txtb_position.Text = rule.position;
+                rulecon.txtb_rule.Text = rule.symbol + rule.aim;
+                rulecon.txtb_describe.Text = tools.describe(rule);
+                rulecon.txtb_startTime.Text = rule.startDate.ToString();
+                if (rule.endDate == nulltime)
+                {
+                    rulecon.txtb_endTime.Text = "无结束日期";
+                }
+                else
+                {
+                    rulecon.txtb_endTime.Text = rule.endDate.ToString();
+                }
+                if (rule.nextDoTimeDate != null)
+                {
+
+                    rulecon.imag_state.Image = Image.FromFile(Application.StartupPath + "\\Resources\\true.jpg");
+                }
+                else
+                {
+                    rulecon.imag_state.Image = Image.FromFile(Application.StartupPath + "\\Resources\\false.jpg");
+                }
+                if (rule.nextDoTimeDate == null)
+                {
+                    rulecon.txtb_nextTime.Text = "已经无法继续执行了！！";
+                }
+                else
+                {
+                    rulecon.txtb_nextTime.Text = rule.nextDoTimeDate.ToString();
+                }
+                panl_rule.Controls.Add(rulecon);
+            }
         }
 
 
@@ -62,13 +88,41 @@ namespace Winform_ExcelWarning
 
         private void bton_start_Click(object sender, EventArgs e)
         {
-           
-          
+             ThreadExcel lis = new ThreadExcel(this);
+             thread = new Thread(new ThreadStart(lis.start));
+             thread.IsBackground = true;
+             thread.Start();
+             MessageBox.Show("检测已经开始");
+             this.bton_start.Enabled = false;
+             this.bton_end.Enabled = true;
+
+
+           // syntec.BLL.ExcelRule ebll = new syntec.BLL.ExcelRule();
+           // ebll.GetModelList("1=1");
+           // foreach (syntec.Model.ExcelRule rule in ebll.GetModelList("1=1"))
+           // {
+           //    DateTime d=Convert.ToDateTime(tools.getnextToDateTime(rule,false));
+           // }    
         }
 
         private void bton_end_Click(object sender, EventArgs e)
         {
-            
-        } 
+            thread.Abort();
+            this.bton_start.Enabled = true;
+            this.bton_end.Enabled = false;
+            MessageBox.Show("检测已经终止");
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void imag_logo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

@@ -49,6 +49,7 @@
             this.bton_update.TabIndex = 20;
             this.bton_update.Text = "修改";
             this.bton_update.UseVisualStyleBackColor = true;
+            this.bton_update.Click += new System.EventHandler(this.bton_update_Click);
             // 
             // txtb_fileName
             // 

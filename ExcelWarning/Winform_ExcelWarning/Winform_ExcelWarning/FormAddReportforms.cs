@@ -8,52 +8,45 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.IO;
-using System.Data;
 
 namespace Winform_ExcelWarning
 {
     public partial class FormAddReportforms : Form
-    {
-        //OleDbConnection cn = new OleDbConnection(tools.sConnectionString);
-        // cn.Open();//创建TestSheet工作表
-
-        // string sqlInsert = "INSERT INTO 报表规则表 VALUES(" + "'" + this.txtb_reportSource.Text.Trim() + "'," + "'" + this.txtb_reportlanwei.Text.Trim() + "'" + "," + "'" + this.txtb_reportguize.Text.Trim() + "'" + "," + "'" + this.drpd_email.SelectedItem.ToString() + "'" + "," + "'" + email + "'" + ")";
-        // OleDbCommand myCommandd = new OleDbCommand(sqlInsert, cn);
-        // myCommandd.ExecuteNonQuery();
-        // cn.Close();              
+    {  
         public FormAddReportforms()
         {
             InitializeComponent();
         }
-
+        //添加表名
         private void bton_search_Click(object sender, EventArgs e)
         {
-            
+            this.drpd_tableName.Items.Clear();
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.ShowDialog();
             this.txtb_reportSource.Text = ofd.FileName;
-            if (this.txtb_reportSource.Text != "") 
+            if (this.txtb_reportSource.Text != "")
             {
                 this.bton_filesearch.Enabled = false;
             }
             DataTable _Table = tools.GetExcelTableName(ofd.FileName);
             for (int i = 0; i != _Table.Rows.Count; i++)
             {
-               
-                this.drpd_tableName.Items.Add(new ListItem("i", _Table.Rows[i]["Table_Name"].ToString()));
-                
+                if (_Table.Rows[i]["Table_Name"].ToString().Substring(0, 4) != "_Hid")
+                {
+                    this.drpd_tableName.Items.Add(new ListItem("i", _Table.Rows[i]["Table_Name"].ToString()));
+                }
+
             }
         }
 
-
+        //规则添加界面初始化
         private void FormAddReportforms_Load(object sender, EventArgs e)
         {
-            
+
             Init();
-           
-          
         }
 
+        //跳转回开始界面
         private void bton_back_Click(object sender, EventArgs e)
         {
             FormMain formMain = new FormMain();
@@ -66,7 +59,7 @@ namespace Winform_ExcelWarning
 
         }
 
-        private void Init() 
+        private void Init()
         {
             //计划类型绑定
             this.drpd_reportType.Items.Add(new ListItem("once", "执行一次"));
@@ -90,20 +83,20 @@ namespace Winform_ExcelWarning
 
             //事件类型绑定
             this.drpd_timeType.Items.Add(new ListItem("Hou", "小时"));
-            this.drpd_timeType.Items.Add(new ListItem("Min", "分钟"));   
+            this.drpd_timeType.Items.Add(new ListItem("Min", "分钟"));
         }
 
         private void drpd_reportType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.drpd_reportType.SelectedItem.ToString() == "重复多次")
             {
-                this.gbox_once.Enabled = false;   
+                this.gbox_once.Enabled = false;
                 this.gbox_more.Enabled = true;
                 this.gbox_everydaymore.Enabled = true;
                 this.gbox_moreCTime.Enabled = true;
-               
+
             }
-            else 
+            else
             {
                 this.gbox_once.Enabled = true;
                 this.gbox_more.Enabled = false;
@@ -112,21 +105,21 @@ namespace Winform_ExcelWarning
             }
         }
 
-        private void setGroupReadonlyTrue(Boolean b,GroupBox g) 
+        private void setGroupReadonlyTrue(Boolean b, GroupBox g)
         {
-           
-                foreach (Control c in g.Controls)
+
+            foreach (Control c in g.Controls)
+            {
+                if (b)
                 {
-                    if(b)
-                    {
-                        c.Enabled = false;
-                    }
-                    else
-                    {
-                        c.Enabled = true;
-                    }
+                    c.Enabled = false;
+                }
+                else
+                {
+                    c.Enabled = true;
                 }
             }
+        }
 
         private void drpd_timeType_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -134,7 +127,7 @@ namespace Winform_ExcelWarning
             {
                 this.drpd_mtpinlv_time.Maximum = 24;
             }
-            else 
+            else
             {
                 this.drpd_mtpinlv_time.Maximum = 60;
             }
@@ -157,16 +150,18 @@ namespace Winform_ExcelWarning
         private void rbtn_cxshijian_endtime_CheckedChanged(object sender, EventArgs e)
         {
             this.dtme_cxTime_endTime.Enabled = true;
+            this.dtme_lastEndTime.Enabled = true;
         }
 
         private void rbtn_cxTime_noendTime_CheckedChanged(object sender, EventArgs e)
         {
             this.dtme_cxTime_endTime.Enabled = false;
+            this.dtme_lastEndTime.Enabled = false;
         }
 
         private void drpd_pinlv_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.drpd_pinlv.SelectedItem.ToString() == "每天") 
+            if (this.drpd_pinlv.SelectedItem.ToString() == "每天")
             {
                 this.lbel_pinlv_day.Visible = true;
                 this.lbel_pinlv_week.Visible = false;
@@ -175,7 +170,7 @@ namespace Winform_ExcelWarning
                 this.lbel_pinlv_month.Visible = false;
                 this.drpd_pinlv_week.Visible = false;
                 this.drpd_pinlv_day.Visible = true;
-                foreach (Control c in gbox_more.Controls) 
+                foreach (Control c in gbox_more.Controls)
                 {
                     if (c.GetType().ToString() == "System.Windows.Forms.CheckBox")
                     {
@@ -194,7 +189,7 @@ namespace Winform_ExcelWarning
                 this.drpd_pinlv_day.Visible = false;
                 foreach (Control c in gbox_more.Controls)
                 {
-                    if (c.GetType().ToString() == "System.Windows.Forms.CheckBox") 
+                    if (c.GetType().ToString() == "System.Windows.Forms.CheckBox")
                     {
                         c.Visible = true;
                     }
@@ -229,27 +224,58 @@ namespace Winform_ExcelWarning
 
         private void bton_sure_Click(object sender, EventArgs e)
         {
-          
+            if (this.bton_filesearch.Enabled == false)
+            {
+                addRule(this.txtb_reportSource.Text, this.drpd_tableName.SelectedItem.ToString());
+            }
+            else 
+            {
+                string[] filenames = Directory.GetFiles(this.txtb_fileBName.Text.Trim());
+                List<string> names = new List<string>();
+                foreach (string s in filenames)
+                {
+
+                    string[] ss = s.Split(new[] { "." }, StringSplitOptions.None);
+                    if (ss[ss.Length - 1] == "xls" || ss[ss.Length - 1] == "XLS")
+                    {
+                        DataTable _Table = tools.GetExcelTableName(s);
+                        for (int i = 0; i != _Table.Rows.Count; i++)
+                        {
+                            if (_Table.Rows[i]["Table_Name"].ToString().Substring(0, 4) != "_Hid")
+                            {
+                                addRule(s, _Table.Rows[i]["Table_Name"].ToString());
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+
+        private void addRule(string reportsource,string tablename)
+        {
             //创建Rule的Bll层对象
             syntec.BLL.ExcelRule ruleBll = new syntec.BLL.ExcelRule();
             //创建Rule的Model层对象
             syntec.Model.ExcelRule ruleModel = new syntec.Model.ExcelRule();
             //给ruleModel对象赋值
-            ruleModel.reportSource = this.txtb_reportSource.Text;
-            ruleModel.sheetName = this.drpd_tableName.SelectedItem.ToString();
             ruleModel.position = this.txtb_hang.Text.Trim() + "," + this.txtb_lei.Text.Trim();
             ListItem item = (ListItem)this.drpd_symbol.SelectedItem;
             ruleModel.symbol = item.ID;
             item = (ListItem)this.drpd_reportType.SelectedItem;
-            ruleModel.planType = item.ID;        
+            ruleModel.planType = item.ID;
             ruleModel.aim = this.txtb_aim.Text.ToString().Trim();
 
-            if (this.txtb_attachmentSource.Text.Length != 0) 
+            if (this.txtb_attachmentSource.Text.Length != 0)
             {
                 ruleModel.attachmentSource = this.txtb_attachmentSource.Text.ToString();
             }
             ruleModel.email = this.txtb_email.Text.ToString().Trim();
             ruleModel.article = this.txtb_article.Text.ToString().Trim();
+            ruleModel.reportSource = reportsource;
+            ruleModel.sheetName = tablename;
+
+
             //仅仅执行一次
             if (this.drpd_reportType.SelectedIndex == 0)
             {
@@ -266,107 +292,97 @@ namespace Winform_ExcelWarning
 
                 ruleModel.startDate = this.dtme_OnceDateTime.Value;
 
-             
+
 
                 DateTime t = new DateTime();
 
-                
+
                 t = tools.AddTwoDate(this.dtme_OnceDateTime.Value, this.dtme_OnceTime.Value);
 
                 //唯一一个不要修改的。！！！！！！！！！！！！！！！！
                 ruleModel.nextDoTimeDate = t;
 
-               
+
             }
-            else 
+            else
             {
-                ruleModel.planType="repeat";
+                ruleModel.planType = "repeat";
                 if (this.rbtn_cxTime_endTime.Checked)
                 {
-                    DateTime endTime =new  DateTime();
+                    DateTime endTime = new DateTime();
                     endTime.AddHours(this.dtme_lastEndTime.Value.Hour);
                     endTime.AddMinutes(this.dtme_lastEndTime.Value.Minute);
                     endTime.AddSeconds(this.dtme_lastEndTime.Value.Second);
                     ruleModel.endDate = this.dtme_cxTime_endTime.Value;
                 }
-              
+                if (this.rbtn_mtpinlv_once.Checked)
+                {
+                    ruleModel.everydayFreSpace = null;
+                }
+                else
+                {
+
+                    ListItem i = (ListItem)drpd_timeType.SelectedItem;
+                    if (i.ID == null)
+                    {
+                        MessageBox.Show("请选择时间类型！！！！");
+                        return;
+                    }
+                    ruleModel.everydayFreSpace = this.drpd_mtpinlv_time.Value.ToString() + i.ID;
+                }
                 //按每日频率插入
-                if (this.drpd_pinlv.SelectedIndex == 0) 
+                if (this.drpd_pinlv.SelectedIndex == 0)
                 {
                     ruleModel.timeType = "D";
 
                     ruleModel.timeSpace = this.drpd_pinlv_day.Value.ToString();
-                    //要修改的。！！！！！！！！！！！！！！！！
-                    ruleModel.nextDoTimeDate = this.dtme_cxTime_endTime.Value;
-                   
                 }
                 //按每周频率插入
-                if (this.drpd_pinlv.SelectedIndex == 1) 
+                if (this.drpd_pinlv.SelectedIndex == 1)
                 {
                     ruleModel.timeType = "W";
                     //拼接周,星期
                     ruleModel.timeSpace = this.drpd_pinlv_week.Value.ToString() + JudgeCheckbox();
-                  
-                    if (JudgeCheckbox() == "") 
+
+                    if (JudgeCheckbox() == "")
                     {
                         MessageBox.Show("请至少选择一个星期日期！！！！");
                         return;
                     }
-                    //要修改的。！！！！！！！！！！！！！！！！
-                    ruleModel.nextDoTimeDate = this.dtme_cxTime_endTime.Value;
-                   
-                    
                 }
                 //按每月频率插入
-                if (this.drpd_pinlv.SelectedIndex == 2) 
+                if (this.drpd_pinlv.SelectedIndex == 2)
                 {
                     ruleModel.timeType = "M";
                     //要修改的。！！！！！！！！！！！！！！！！
                     ruleModel.timeSpace = this.drpd_pinlv_day.Value.ToString() + "," + this.drpd_pinlv_month.Value.ToString();
-                    ruleModel.nextDoTimeDate = this.dtme_cxTime_endTime.Value;
-                    
                 }
                 DateTime d = new DateTime();
                 d = tools.AddTwoDate(this.dtme_cxTime_startTime.Value, this.dtme_lastStartTime.Value);
-                
+
                 ruleModel.startDate = d;
                 TimeSpan s1 = new TimeSpan(this.dtme_MoreTime.Value.Hour, this.dtme_MoreTime.Value.Minute, this.dtme_MoreTime.Value.Second);
                 ruleModel.startTime = s1;
-
-                if (tools.getnextToDateTime(ruleModel) != null)
+                //在插入规则时判断第一次的执行时间 true代表第一次
+                if (tools.getnextToDateTime(ruleModel, true) != null)
                 {
-                    ruleModel.nextDoTimeDate = (DateTime)tools.getnextToDateTime(ruleModel);
+                    ruleModel.nextDoTimeDate = (DateTime)tools.getnextToDateTime(ruleModel, true);
                 }
             }
-            if (this.rbtn_mtpinlv_once.Checked)
+
+            if (ruleModel.nextDoTimeDate == null)
             {
-                ruleModel.everydayFreSpace = null;
+                MessageBox.Show("规则不能执行任何一次，请重试哦亲！！");
+                return;
             }
-            else
-            {
-
-                ListItem i = (ListItem)drpd_timeType.SelectedItem;
-                if (i.ID == null) 
-                {
-                    MessageBox.Show("请选择时间类型！！！！");
-                    return;
-                }
-                ruleModel.everydayFreSpace = this.drpd_mtpinlv_time.Value.ToString() + i.ID;
-            }
-            
-           
-
-           
-
-         
+            //bool a = tools.ExcelIsOK(ruleModel);
 
             ruleBll.Add(ruleModel);
-            
         }
 
         private void drpd_symbol_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void lbel_position_Click(object sender, EventArgs e)
@@ -379,11 +395,11 @@ namespace Winform_ExcelWarning
             if (this.folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
                 if (this.folderBrowserDialog1.SelectedPath.Trim() != "")
-                    this.txtb_fileBName.Text = this.folderBrowserDialog1.SelectedPath.Trim();
+                this.txtb_fileBName.Text = this.folderBrowserDialog1.SelectedPath.Trim();
                 this.bton_search.Enabled = false;
                 this.drpd_tableName.Enabled = false;
             }
- 
+
         }
 
         private void bton_fileBName_Click(object sender, EventArgs e)
@@ -399,47 +415,52 @@ namespace Winform_ExcelWarning
             this.bton_filesearch.Enabled = true;
         }
 
-        private string JudgeCheckbox() 
+        private string JudgeCheckbox()
         {
             string a = "";
-            if (this.cbox_pinlv_Firstday.Checked) 
+            if (this.cbox_pinlv_Firstday.Checked)
             {
-                a += ",Firstday";
+                a += ",Monday";
             }
-            if (this.cbox_pinlv_Tuesday.Checked) 
+            if (this.cbox_pinlv_Tuesday.Checked)
             {
                 a += ",Tuesday";
             }
-            if (this.cbox_pinlv_Wednesday.Checked) 
+            if (this.cbox_pinlv_Wednesday.Checked)
             {
                 a += ",Wednesday";
             }
-            if (this.cbox_pinlv_Thursday.Checked) 
+            if (this.cbox_pinlv_Thursday.Checked)
             {
                 a += ",Thursday";
             }
-            if (this.cbox_pinlv_Friday.Checked) 
+            if (this.cbox_pinlv_Friday.Checked)
             {
                 a += ",Friday";
             }
-            if (this.cbox_pinlv_Saturday.Checked) 
+            if (this.cbox_pinlv_Saturday.Checked)
             {
                 a += ",Saturday";
             }
-            if (this.cbox_pinlv_Sunday.Checked) 
+            if (this.cbox_pinlv_Sunday.Checked)
             {
                 a += ",Sunday";
             }
             return a;
         }
 
-      
-      
-      }
+        private void gbox_once_Enter(object sender, EventArgs e)
+        {
 
-     
+        }
 
-      
-   }
+
+
+    }
+
+
+
+
+}
 
 
