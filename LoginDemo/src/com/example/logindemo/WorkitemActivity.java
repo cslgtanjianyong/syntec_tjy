@@ -22,6 +22,7 @@ import tools.tools;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
+import android.R.string;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -67,11 +68,10 @@ public class WorkitemActivity extends Activity {
 		else
 		{
 			tools.processWorkingList=tools.xmlToListProcess(xmlStr);//取到流程列表list
-
+			String id=String.valueOf(tools.processWorkingList.size());
+		
 		}
-		 SimpleAdapter adapter = new SimpleAdapter(this, getData(), R.layout.activity_workitem,  
-	                new String[]{"image","processId","activityId"}, new int[]{R.id.image,R.id.userName,R.id.userAge});  
-		 workingProcesslist.setAdapter(adapter);  
+
 	}
 
 	@Override
@@ -80,21 +80,7 @@ public class WorkitemActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-	    private ArrayList<HashMap<String, Object>> getData(){  
-		        ArrayList<HashMap<String, Object>> arrayList = new ArrayList<HashMap<String,Object>>();  
-		        for(int i=0;i<tools.processWorkingList.size();i++){  
-	           HashMap<String, Object> tempHashMap = new HashMap<String, Object>();  
-		            tempHashMap.put("image",R.drawable.ic_launcher);  
-	           tempHashMap.put("processId", tools.processWorkingList.get(i).getProcessId());  
-		           tempHashMap.put("activityId",tools.processWorkingList.get(i).getActivityId());  
-	           arrayList.add(tempHashMap);  
-		              
-	       }  
-		          
-	         
-		        return arrayList;  
-		         
-		    }  
+	  
 
 
 }

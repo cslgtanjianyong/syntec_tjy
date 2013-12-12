@@ -10,22 +10,22 @@ import com.example.cslg.R;
 
 
 
-/** 缁ф壙 TabHost 缁勪欢锛屽甫鏈夊垏鍏ュ垏鍑虹殑婊戝姩鍔ㄧ敾鏁堟灉銆�*/
+/** 缂佈勫 TabHost 缂佸嫪娆㈤敍灞界敨閺堝鍨忛崗銉ュ瀼閸戣櫣娈戝鎴濆З閸斻劎鏁鹃弫鍫熺亯閵嗭拷*/
 public class AnimationTabHost extends TabHost {
 
-	private Animation slideLeftIn;// 浠庡睆骞曞乏杈硅繘鏉�
-	private Animation slideLeftOut;// 浠庡睆骞曞乏杈瑰嚭鍘�
-	private Animation slideRightIn;// 浠庡睆骞曞彸杈硅繘鏉�
-	private Animation slideRightOut;// 浠庡睆骞曞彸杈瑰嚭鍘�
+	private Animation slideLeftIn;// 娴犲骸鐫嗛獮鏇炰箯鏉堢绻橀弶锟�
+	private Animation slideLeftOut;// 娴犲骸鐫嗛獮鏇炰箯鏉堢懓鍤崢锟�
+	private Animation slideRightIn;// 娴犲骸鐫嗛獮鏇炲礁鏉堢绻橀弶锟�
+	private Animation slideRightOut;// 娴犲骸鐫嗛獮鏇炲礁鏉堢懓鍤崢锟�
 
-	/** 璁板綍鏄惁鎵撳紑鍔ㄧ敾鏁堟灉 */
+	/** 鐠佹澘缍嶉弰顖氭儊閹垫挸绱戦崝銊ф暰閺佸牊鐏�*/
 	private boolean isOpenAnimation;
-	/** 璁板綍褰撳墠鏍囩椤电殑鎬绘暟 */
+	/** 鐠佹澘缍嶈ぐ鎾冲閺嶅洨顒锋い鐢垫畱閹粯鏆�*/
 	private int mTabCount;
 
 	public AnimationTabHost(Context context, AttributeSet attrs) {
-		super(context, attrs);
-		/** 鍒濆鍖栭粯璁ゅ姩鐢�*/
+		super(context, attrs);}
+		/** 閸掓繂顬婇崠鏍帛鐠併倕濮╅悽锟�/
 		slideLeftIn = AnimationUtils.loadAnimation(context,
 				R.anim.slide_left);
 		slideLeftOut = AnimationUtils.loadAnimation(context,
@@ -34,15 +34,15 @@ public class AnimationTabHost extends TabHost {
 				R.anim.slide_right);
 		slideRightOut = AnimationUtils.loadAnimation(context,
 				R.anim.slide_right);
-		isOpenAnimation = false;// 鍔ㄧ敾榛樿鍏抽棴
+		isOpenAnimation = false;// 閸斻劎鏁炬妯款吇閸忔娊妫�
 
-	}
+	  }
 
 	/**
-	 * 璁剧疆鏄惁鎵撳紑鍔ㄧ敾鏁堟灉
+	 * 鐠佸墽鐤嗛弰顖氭儊閹垫挸绱戦崝銊ф暰閺佸牊鐏�
 	 * 
 	 * @param isOpenAnimation
-	 *            true锛氭墦寮�
+	 *            true閿涙碍澧﹀锟�
 	 */
 	public void setOpenAnimation(boolean isOpenAnimation) {
 		this.isOpenAnimation = isOpenAnimation;
@@ -50,7 +50,7 @@ public class AnimationTabHost extends TabHost {
 
 	/**
 	 * 
-	 * @return 杩斿洖褰撳墠鏍囩椤电殑鎬绘暟
+	 * @return 鏉╂柨娲栬ぐ鎾冲閺嶅洨顒锋い鐢垫畱閹粯鏆�
 	 */
 
 	public int getTabCount() {
@@ -63,51 +63,51 @@ public class AnimationTabHost extends TabHost {
 		super.addTab(tabSpec);
 	}
 
-	// 閲嶅啓setCurrentTab(int index) 鏂规硶锛岃繖閲屽姞鍏ュ姩鐢伙紒鍏抽敭鐐瑰氨鍦ㄨ繖銆�
+	// 闁插秴鍟搒etCurrentTab(int index) 閺傝纭堕敍宀冪箹闁插苯濮為崗銉ュЗ閻紮绱掗崗鎶芥暛閻愮懓姘ㄩ崷銊ㄧ箹閵嗭拷
 	@Override
 	public void setCurrentTab(int index) {
-		// 鍒囨崲鍓嶆墍鍦ㄩ〉鐨勯〉闈�
+		// 閸掑洦宕查崜宥嗗閸︺劑銆夐惃鍕�闂堬拷
 		int mCurrentTabID = getCurrentTab();
 		if (null != getCurrentView()) {
-			// 绗竴娆¤缃�Tab 鏃讹紝璇ュ�涓�null銆�
+			// 缁楊兛绔村▎陇顔曠純锟絋ab 閺冭绱濈拠銉ワ拷娑擄拷null閵嗭拷
 			if (isOpenAnimation) {
-				// 绂诲紑鐨勯〉闈�
-				// 寰幆鏃讹紝鏈〉鍒扮涓�〉
+				// 缁傝绱戦惃鍕�闂堬拷
+				// 瀵邦亞骞嗛弮璁圭礉閺堫偊銆夐崚鎵儑娑擄拷銆�
 				if (mCurrentTabID == (mTabCount - 1) && index == 0) {
 					getCurrentView().startAnimation(slideLeftOut);
 				}
-				// 寰幆鏃讹紝棣栭〉鍒版湯椤�
+				// 瀵邦亞骞嗛弮璁圭礉妫ｆ牠銆夐崚鐗堟汞妞わ拷
 				else if (mCurrentTabID == 0 && index == (mTabCount - 1)) {
 					getCurrentView().startAnimation(slideRightOut);
 				}
-				// 鍒囨崲鍒板彸杈圭殑鐣岄潰锛屼粠宸﹁竟绂诲紑
+				// 閸掑洦宕查崚鏉垮礁鏉堝湱娈戦悾宀勬桨閿涘奔绮犲锕佺珶缁傝绱�
 				else if (index > mCurrentTabID) {
 					getCurrentView().startAnimation(slideLeftOut);
 				}
-				// 鍒囨崲鍒板乏杈圭殑鐣岄潰锛屼粠鍙宠竟绂诲紑
+				// 閸掑洦宕查崚鏉夸箯鏉堝湱娈戦悾宀勬桨閿涘奔绮犻崣瀹犵珶缁傝绱�
 				else if (index < mCurrentTabID) {
 					getCurrentView().startAnimation(slideRightOut);
 				}
 			}
 		}
-		// 璁剧疆褰撳墠椤�
+		// 鐠佸墽鐤嗚ぐ鎾冲妞わ拷
 		super.setCurrentTab(index);
 
 		if (isOpenAnimation) {
-			// 褰撳墠椤佃繘鏉ユ槸鍔ㄧ敾
-			// 寰幆鏃讹紝鏈〉鍒扮涓�〉
+			// 瑜版挸澧犳い浣冪箻閺夈儲妲搁崝銊ф暰
+			// 瀵邦亞骞嗛弮璁圭礉閺堫偊銆夐崚鎵儑娑擄拷銆�
 			if (mCurrentTabID == (mTabCount - 1) && index == 0) {
 				getCurrentView().startAnimation(slideRightIn);
 			}
-			// 寰幆鏃讹紝棣栭〉鍒版湯椤�
+			// 瀵邦亞骞嗛弮璁圭礉妫ｆ牠銆夐崚鐗堟汞妞わ拷
 			else if (mCurrentTabID == 0 && index == (mTabCount - 1)) {
 				getCurrentView().startAnimation(slideLeftIn);
 			}
-			// 鍒囨崲鍒板彸杈圭殑鐣岄潰锛屼粠鍙宠竟杩涙潵
+			// 閸掑洦宕查崚鏉垮礁鏉堝湱娈戦悾宀勬桨閿涘奔绮犻崣瀹犵珶鏉╂稒娼�
 			else if (index > mCurrentTabID) {
 				getCurrentView().startAnimation(slideRightIn);
 			}
-			// 鍒囨崲鍒板乏杈圭殑鐣岄潰锛屼粠宸﹁竟杩涙潵
+			// 閸掑洦宕查崚鏉夸箯鏉堝湱娈戦悾宀勬桨閿涘奔绮犲锕佺珶鏉╂稒娼�
 			else if (index < mCurrentTabID) {
 				getCurrentView().startAnimation(slideLeftIn);
 			}

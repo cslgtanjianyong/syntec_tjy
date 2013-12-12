@@ -24,21 +24,26 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080009;
-        public static final int bton_Cancel=0x7f080004;
-        public static final int bton_Login=0x7f080005;
-        public static final int lb_PassWord=0x7f080000;
-        public static final int lb_UserName=0x7f080001;
-        public static final int lb_pId=0x7f080006;
-        public static final int lb_proId=0x7f080007;
-        public static final int list_processShow=0x7f080008;
-        public static final int text_PassWord=0x7f080002;
-        public static final int text_UserName=0x7f080003;
+        public static final int ItemImage=0x7f080001;
+        public static final int ItemText=0x7f080003;
+        public static final int ItemTitle=0x7f080002;
+        public static final int RelativeLayout01=0x7f080000;
+        public static final int action_settings=0x7f08000d;
+        public static final int bton_Cancel=0x7f080008;
+        public static final int bton_Login=0x7f080009;
+        public static final int lb_PassWord=0x7f080004;
+        public static final int lb_UserName=0x7f080005;
+        public static final int lb_pId=0x7f08000a;
+        public static final int lb_proId=0x7f08000b;
+        public static final int list_processShow=0x7f08000c;
+        public static final int text_PassWord=0x7f080006;
+        public static final int text_UserName=0x7f080007;
     }
     public static final class layout {
-        public static final int activity_login=0x7f030000;
-        public static final int activity_workitem=0x7f030001;
-        public static final int listview_myprocess=0x7f030002;
+        public static final int activity_listview_content=0x7f030000;
+        public static final int activity_login=0x7f030001;
+        public static final int activity_workitem=0x7f030002;
+        public static final int listview_myprocess=0x7f030003;
     }
     public static final class menu {
         public static final int main=0x7f070000;
